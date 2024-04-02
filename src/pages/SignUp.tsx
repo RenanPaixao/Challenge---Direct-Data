@@ -1,6 +1,8 @@
+import { Center } from '@chakra-ui/react'
+import { AboutYouForm } from '../components/AboutYouForm/AboutYouForm.tsx'
 
 export const SignUp = () => {
-  return <h1>
-    Sign up
-  </h1>
+  return <Center>
+    <AboutYouForm/>
+  </Center>
 }
