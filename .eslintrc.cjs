@@ -15,7 +15,7 @@ module.exports = {
     project: ['./tsconfig.json', './tsconfig.node.json', 'cypress/tsconfig.json'],
     parser: '@typescript-eslint/parser',
   },
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'unused-imports'],
   'settings': {
     'import/resolver': {
       'node': {
