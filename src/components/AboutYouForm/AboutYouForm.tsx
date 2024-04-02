@@ -88,8 +88,8 @@ export const AboutYouForm = ({ children }: PropsWithChildren) => {
         return <FormControl key={key} isInvalid={hasFormikError<AboutYouValues>(key, formik.touched, formik.errors)}>
           <FormLabel htmlFor={key}>{label}</FormLabel>
           <Input
-            type={type}
             name={key}
+            type={type}
             aria-label={key}
             onChange={formik.handleChange}
             value={formik.values[key]}
