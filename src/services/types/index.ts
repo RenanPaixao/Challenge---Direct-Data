@@ -1,5 +1,5 @@
-export interface Student extends IdentityInformation {
-  responsavel: IdentityInformation | null,
+export interface StudentModel extends IdentityInformationModel {
+  responsavel: IdentityInformationModel | null,
   peso: number,
   altura: number,
   email: string,
@@ -13,7 +13,7 @@ export interface Student extends IdentityInformation {
   uf: string
 }
 
-interface IdentityInformation {
+interface IdentityInformationModel {
   nome: string ,
   sobrenome: string ,
   dataNascimento: string,

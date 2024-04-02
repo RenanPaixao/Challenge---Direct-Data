@@ -1,15 +1,18 @@
 import AppRouter from './routes.tsx'
 import { Box, ChakraProvider } from '@chakra-ui/react'
 import customTheme from './theme.ts'
+import { StudentProvider } from './context/StudentContext.tsx'
 
 function App() {
   return (
-    <ChakraProvider theme={customTheme}>
-      {/*Layout spacing*/}
-      <Box p={16}>
-        <AppRouter />
-      </Box>
-    </ChakraProvider>
+    <StudentProvider>
+      <ChakraProvider theme={customTheme}>
+        {/*Layout spacing*/}
+        <Box p={16}>
+          <AppRouter />
+        </Box>
+      </ChakraProvider>
+    </StudentProvider>
   )
 }
 

@@ -1,9 +1,12 @@
-import { Center, FormControl, FormErrorMessage, FormLabel, Input, SimpleGrid } from '@chakra-ui/react'
-import { useFormik } from 'formik'
-import { PropsWithChildren } from 'react'
+import { Center, SimpleGrid } from '@chakra-ui/react'
+import { FormikProvider, useFormik } from 'formik'
+import { PropsWithChildren, useContext, useEffect, useState } from 'react'
 import * as Yup from 'yup'
 import { FORM_MESSAGES } from '../../utils/constants.ts'
-import { hasFormikError } from '../../utils/forms.ts'
+import { StudentContext } from '../../context/StudentContext.tsx'
+import { FieldConfig } from './types'
+import { DateTime } from 'luxon'
+import { TheField } from '../TheField/TheField.tsx'
 
 const { REQUIRED, INVALID_EMAIL } = FORM_MESSAGES
 
@@ -15,55 +18,85 @@ const schema = Yup.object({
   weight: Yup.string().required(REQUIRED),
   height: Yup.string().required(REQUIRED),
   email: Yup.string().required(REQUIRED).email(INVALID_EMAIL),
-  phone: Yup.string().required(REQUIRED)
+  phone: Yup.string().required(REQUIRED),
+  responsibleName: Yup.string().required(REQUIRED),
+  responsibleLastName: Yup.string().required(REQUIRED),
+  responsibleBirthDate: Yup.string().required(REQUIRED),
+  responsibleCpf: Yup.string().required(REQUIRED)
 })
 
-type AboutYouValues = Yup.InferType<typeof schema>
+export type AboutYouValues = Yup.InferType<typeof schema>
 
-const fieldsConfig: {key: keyof AboutYouValues, type: string, label: string}[]  = [
+const fieldsConfig: FieldConfig<AboutYouValues>[]  = [
   {
-    key: 'name',
+    name: 'name',
     type: 'text',
     label: 'Nome'
   },
   {
-    key: 'lastName',
+    name: 'lastName',
     type: 'text',
     label: 'Sobrenome'
   },
   {
-    key: 'birthDate',
+    name: 'birthDate',
     type: 'date',
     label: 'Data de nascimento'
   },
   {
-    key: 'cpf',
+    name: 'cpf',
     type: 'text',
     label: 'CPF'
   },
   {
-    key: 'weight',
+    name: 'weight',
     type: 'text',
     label: 'Peso'
   },
   {
-    key: 'height',
+    name: 'height',
     type: 'text',
     label: 'Altura'
   },
   {
-    key: 'email',
+    name: 'email',
     type: 'email',
     label: 'Email'
   },
   {
-    key: 'phone',
+    name: 'phone',
     type: 'tel',
     label: 'Telefone'
   }
 ]
 
+const responsibleFieldsConfig: FieldConfig<AboutYouValues>[] = [
+  {
+    name: 'responsibleName',
+    type: 'text',
+    label: 'Nome do Responsável'
+  },
+  {
+    name: 'responsibleLastName',
+    type: 'text',
+    label: 'Sobrenome do Responsável'
+  },
+  {
+    name: 'responsibleBirthDate',
+    label: 'Data de nascimento do Responsável',
+    type: 'date'
+  },
+  {
+    name: 'responsibleCpf',
+    type: 'text',
+    label: 'CPF do Responsável'
+  }
+]
+
 export const AboutYouForm = ({ children }: PropsWithChildren) => {
+  const studentContext = useContext(StudentContext)
+  const [areOver18, setAreOver18] = useState(true)
+
   const formik = useFormik<AboutYouValues>({
     initialValues: {
       name: '',
@@ -73,32 +106,54 @@ export const AboutYouForm = ({ children }: PropsWithChildren) => {
       weight: '',
       height: '',
       email: '',
-      phone: ''
+      phone: '',
+      responsibleName: '',
+      responsibleLastName: '',
+      responsibleBirthDate: '',
+      responsibleCpf: ''
     },
     onSubmit: values => {
-      console.log(values)
+      const { responsibleName, responsibleLastName, responsibleBirthDate, responsibleCpf, ...rest } = values
+
+      const responsible = areOver18 ? null : {
+        name: responsibleName,
+        lastName: responsibleLastName,
+        birthDate: responsibleBirthDate,
+        cpf: responsibleCpf
+      }
+
+      studentContext.setAboutYouInformation({
+        ...rest,
+        responsible
+      })
     },
     validationSchema: schema,
     validateOnBlur: true
   })
 
-  return <Center as={'form'}>
-    <SimpleGrid columns={2} spacing={8}>
-      {fieldsConfig.map(({ key, type, label }) => {
-        return <FormControl key={key} isInvalid={hasFormikError<AboutYouValues>(key, formik.touched, formik.errors)}>
-          <FormLabel htmlFor={key}>{label}</FormLabel>
-          <Input
-            name={key}
-            type={type}
-            aria-label={key}
-            onChange={formik.handleChange}
-            value={formik.values[key]}
-            onBlur={formik.handleBlur}
-          />
-          <FormErrorMessage>{formik.errors[key]}</FormErrorMessage>
-        </FormControl>
-      })}
-    </SimpleGrid>
-    {children}
-  </Center>
+  useEffect(() => {
+    if(!formik.values.birthDate) {
+      return
+    }
+    const age = DateTime.now().diff(DateTime.fromISO(formik.values.birthDate), 'years').years
+
+    setAreOver18(age > 18)
+  }, [formik.values.birthDate])
+
+  return <FormikProvider value={formik}>
+    <Center as={'form'}>
+      <SimpleGrid columns={[1, 2]} spacing={8}>
+        {fieldsConfig.map(({ name, type, label }) => {
+          return <TheField key={name} label={label} type={type} name={name} />
+        })}
+        {
+          formik.touched.birthDate && !areOver18 && responsibleFieldsConfig.map(({ name, type, label }) => {
+            return <TheField key={name} label={label} type={type} name={name} />
+          })
+        }
+      </SimpleGrid>
+      {children}
+    </Center>
+  </FormikProvider>
 }
+
