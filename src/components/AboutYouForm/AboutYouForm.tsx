@@ -1,4 +1,4 @@
-import { Center, SimpleGrid } from '@chakra-ui/react'
+import { Center, SimpleGrid, SimpleGridProps } from '@chakra-ui/react'
 import { FormikProvider, useFormik } from 'formik'
 import { PropsWithChildren, useContext, useEffect, useState } from 'react'
 import * as Yup from 'yup'
@@ -107,7 +107,7 @@ const responsibleFieldsConfig: FieldConfig<AboutYouValues>[] = [
   }
 ]
 
-export const AboutYouForm = ({ children }: PropsWithChildren) => {
+export const AboutYouForm = ({ children, ...rest }: PropsWithChildren<SimpleGridProps>) => {
   const { aboutYouInformation, setAboutYouInformation } = useContext(StudentContext)
   const [areOver18, setAreOver18] = useState(true)
 
@@ -174,8 +174,8 @@ export const AboutYouForm = ({ children }: PropsWithChildren) => {
   }
 
   return <FormikProvider value={formik}>
-    <Center as={'form'} onSubmit={formik.handleSubmit} flexDirection={'column'}>
-      <SimpleGrid columns={[1, 2]} spacing={8}>
+    <Center  as={'form'} onSubmit={formik.handleSubmit} flexDirection={'column'}>
+      <SimpleGrid {...rest} columns={[1, 2]} spacing={8}>
         {renderInputsBaseOnConfigs(fieldsConfig)}
         {
           !areOver18 &&
