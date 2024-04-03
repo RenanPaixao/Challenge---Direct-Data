@@ -7,6 +7,7 @@ import { StudentContext } from '../../context/StudentContext.tsx'
 import { FieldConfig } from './types'
 import { DateTime } from 'luxon'
 import { TheField } from '../TheField/TheField.tsx'
+import { IMaskInput } from 'react-imask'
 
 const { REQUIRED, INVALID_EMAIL } = FORM_MESSAGES
 
@@ -46,17 +47,22 @@ const fieldsConfig: FieldConfig<AboutYouValues>[]  = [
   {
     name: 'cpf',
     type: 'text',
-    label: 'CPF'
+    label: 'CPF',
+    mask: '000.000.000-00'
   },
   {
     name: 'weight',
     type: 'text',
-    label: 'Peso'
+    label: 'Peso',
+    mask: ['000,00', '00,00'],
+    helpMessage: 'Exemplo: 70,00'
   },
   {
     name: 'height',
     type: 'text',
-    label: 'Altura'
+    label: 'Altura',
+    mask: '0,00',
+    helpMessage: 'Exemplo: 1,70'
   },
   {
     name: 'email',
@@ -66,7 +72,8 @@ const fieldsConfig: FieldConfig<AboutYouValues>[]  = [
   {
     name: 'phone',
     type: 'tel',
-    label: 'Telefone'
+    label: 'Telefone',
+    mask: '(00) 00000-0000'
   }
 ]
 
@@ -89,7 +96,8 @@ const responsibleFieldsConfig: FieldConfig<AboutYouValues>[] = [
   {
     name: 'responsibleCpf',
     type: 'text',
-    label: 'CPF do Responsável'
+    label: 'CPF do Responsável',
+    mask: '000.000.000-00'
   }
 ]
 
@@ -141,10 +149,16 @@ export const AboutYouForm = ({ children }: PropsWithChildren) => {
   }, [formik.values.birthDate])
 
   return <FormikProvider value={formik}>
-    <Center as={'form'}>
+    <Center as={'form'} onSubmit={formik.handleSubmit} flexDirection={'column'}>
       <SimpleGrid columns={[1, 2]} spacing={8}>
-        {fieldsConfig.map(({ name, type, label }) => {
-          return <TheField key={name} label={label} type={type} name={name} />
+        {fieldsConfig.map(({ name, mask, ...rest }) => {
+          return <TheField
+            as={mask ? IMaskInput : undefined}
+            key={name}
+            mask={mask}
+            name={name}
+            {...rest}
+          />
         })}
         {
           formik.touched.birthDate && !areOver18 && responsibleFieldsConfig.map(({ name, type, label }) => {

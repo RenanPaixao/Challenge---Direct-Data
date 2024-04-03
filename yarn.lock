@@ -184,6 +184,14 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.22.5"
 
+"@babel/runtime-corejs3@^7.23.9":
+  version "7.24.1"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.24.1.tgz#f39707b213441dec645ce8285ae14f281a5077c6"
+  integrity sha512-T9ko/35G+Bkl+win48GduaPlhSlOjjE5s1TeiEcD+QpxlLQnoEfb/nO/T+TQqkm+ipFwORn+rB8w14iJ/uD0bg==
+  dependencies:
+    core-js-pure "^3.30.2"
+    regenerator-runtime "^0.14.0"
+
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.9.2":
   version "7.23.8"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.23.8.tgz#8ee6fe1ac47add7122902f257b8ddf55c898f650"
@@ -2323,6 +2331,11 @@ copy-to-clipboard@3.3.3:
   dependencies:
     toggle-selection "^1.0.6"
 
+core-js-pure@^3.30.2:
+  version "3.36.1"
+  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.36.1.tgz#1461c89e76116528b54eba20a0aff30164087a94"
+  integrity sha512-NXCvHvSVYSrewP0L5OhltzXeWFJLo2AL2TYnj6iLV3Bw8mM62wAQMNgUCRI6EBu6hVVpbCxmOPlxh1Ikw2PfUA==
+
 core-util-is@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -3283,6 +3296,13 @@ ignore@^5.2.0, ignore@^5.2.4:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.3.0.tgz#67418ae40d34d6999c95ff56016759c718c82f78"
   integrity sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg==
 
+imask@^7.5.0:
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/imask/-/imask-7.5.0.tgz#dc191f3297794ecc9afc62041816a2909a8d36bd"
+  integrity sha512-eoTEnw67KAamB1zsiYtU35s0Fj1XYZ8mN2q3ZDGO4ot4FtPmBpw9S6kOTj0kaOILdsEA6ZhNtH2TAMXe/NChmQ==
+  dependencies:
+    "@babel/runtime-corejs3" "^7.23.9"
+
 import-fresh@^3.2.1:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-3.3.0.tgz#37162c25fcb9ebaa2e6e53d5b4d88ce17d9e0c2b"
@@ -4158,7 +4178,7 @@ process@^0.11.10:
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
   integrity sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==
 
-prop-types@^15.6.2:
+prop-types@^15.6.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -4258,6 +4278,14 @@ react-icons@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.0.1.tgz#1694e11bfa2a2888cab47dcc30154ce90485feee"
   integrity sha512-WqLZJ4bLzlhmsvme6iFdgO8gfZP17rfjYEJ2m9RsZjZ+cc4k1hTzknEz63YS1MeT50kVzoa1Nz36f4BEx+Wigw==
+
+react-imask@^7.5.0:
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/react-imask/-/react-imask-7.5.0.tgz#ba751c3b29c263fc47293e49755a5f0a369a12f8"
+  integrity sha512-yWExhHphDmNaHvmOsYR+5QcludeBdYk6bXyo8kouIJFAub5sF+O0kLPVupg2yhd7EfTqjLswFZ/tqY1AhKnd9Q==
+  dependencies:
+    imask "^7.5.0"
+    prop-types "^15.8.1"
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
