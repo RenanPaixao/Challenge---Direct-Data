@@ -1,6 +1,6 @@
-import { Center, SimpleGrid, SimpleGridProps } from '@chakra-ui/react'
+import { Button, Center, SimpleGrid, SimpleGridProps } from '@chakra-ui/react'
 import { FormikProvider, useFormik } from 'formik'
-import { PropsWithChildren, useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import * as Yup from 'yup'
 import { FORM_MESSAGES } from '../../utils/constants.ts'
 import { StudentContext } from '../../context/StudentContext.tsx'
@@ -8,6 +8,8 @@ import { FieldConfig } from './types'
 import { DateTime } from 'luxon'
 import { TheField } from '../TheField/TheField.tsx'
 import { IMaskInput } from 'react-imask'
+import { FormFooterWrapper } from './FormFooterWrapper.tsx'
+import { StepperContext } from '../../context/StepperContext.tsx'
 
 const { REQUIRED, INVALID_EMAIL } = FORM_MESSAGES
 
@@ -107,7 +109,8 @@ const responsibleFieldsConfig: FieldConfig<AboutYouValues>[] = [
   }
 ]
 
-export const AboutYouForm = ({ children, ...rest }: PropsWithChildren<SimpleGridProps>) => {
+export const AboutYouForm = (props: SimpleGridProps) => {
+  const {  goToNext } = useContext(StepperContext)!
   const { aboutYouInformation, setAboutYouInformation } = useContext(StudentContext)
   const [areOver18, setAreOver18] = useState(true)
 
@@ -143,6 +146,9 @@ export const AboutYouForm = ({ children, ...rest }: PropsWithChildren<SimpleGrid
         ...rest,
         responsible
       })
+
+      goToNext()
+      formik.setSubmitting(false)
     },
     validationSchema: schema,
     validateOnBlur: true
@@ -174,15 +180,19 @@ export const AboutYouForm = ({ children, ...rest }: PropsWithChildren<SimpleGrid
   }
 
   return <FormikProvider value={formik}>
-    <Center  as={'form'} onSubmit={formik.handleSubmit} flexDirection={'column'}>
-      <SimpleGrid {...rest} columns={[1, 2]} spacing={8}>
+    <Center as={'form'} onSubmit={formik.handleSubmit} flexDirection={'column'}>
+      <SimpleGrid {...props} columns={[1, 2]} spacing={8}>
         {renderInputsBaseOnConfigs(fieldsConfig)}
         {
           !areOver18 &&
           renderInputsBaseOnConfigs(responsibleFieldsConfig)
         }
       </SimpleGrid>
-      {children}
+      <FormFooterWrapper pt={10} justifyContent={'end'}>
+        <Button type={'submit'} isLoading={formik.isSubmitting}>
+          Avançar
+        </Button>
+      </FormFooterWrapper>
     </Center>
   </FormikProvider>
 }
