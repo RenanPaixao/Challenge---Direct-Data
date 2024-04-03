@@ -3,5 +3,6 @@ export interface FieldConfig<t> {
   type: string,
   label: string
   mask?: string | string[]
-  helpMessage?: string
+  helpMessage?: string,
+  'data-testid'?: string
 }

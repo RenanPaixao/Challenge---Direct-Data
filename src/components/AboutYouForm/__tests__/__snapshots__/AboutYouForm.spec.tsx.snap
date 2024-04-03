@@ -1,0 +1,528 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AboutYouForm > should render 1`] = `
+<div>
+  <form
+    class="css-b93e9j"
+  >
+    <div
+      class="css-1gkent6"
+    >
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="name"
+          id="field-:r0:-label"
+        >
+          Nome
+        </label>
+        <input
+          aria-describedby="field-:r0:-helptext"
+          aria-label="name"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r0:"
+          name="name"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r0:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="lastName"
+          id="field-:r1:-label"
+        >
+          Sobrenome
+        </label>
+        <input
+          aria-describedby="field-:r1:-helptext"
+          aria-label="lastName"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r1:"
+          name="lastName"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r1:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="birthDate"
+          id="field-:r2:-label"
+        >
+          Data de nascimento
+        </label>
+        <input
+          aria-describedby="field-:r2:-helptext"
+          aria-label="birthDate"
+          class="chakra-input css-1cjy4zv"
+          data-testid="birthDate"
+          id="field-:r2:"
+          name="birthDate"
+          type="date"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r2:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="cpf"
+          id="field-:r3:-label"
+        >
+          CPF
+        </label>
+        <input
+          aria-describedby="field-:r3:-helptext"
+          aria-label="cpf"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r3:"
+          name="cpf"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r3:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="weight"
+          id="field-:r4:-label"
+        >
+          Peso
+        </label>
+        <input
+          aria-describedby="field-:r4:-helptext"
+          aria-label="weight"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r4:"
+          name="weight"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r4:-helptext"
+        >
+          Exemplo: 70,00
+        </div>
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="height"
+          id="field-:r5:-label"
+        >
+          Altura
+        </label>
+        <input
+          aria-describedby="field-:r5:-helptext"
+          aria-label="height"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r5:"
+          name="height"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r5:-helptext"
+        >
+          Exemplo: 1,70
+        </div>
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="email"
+          id="field-:r6:-label"
+        >
+          Email
+        </label>
+        <input
+          aria-describedby="field-:r6:-helptext"
+          aria-label="email"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r6:"
+          name="email"
+          type="email"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r6:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="phone"
+          id="field-:r7:-label"
+        >
+          Telefone
+        </label>
+        <input
+          aria-describedby="field-:r7:-helptext"
+          aria-label="phone"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r7:"
+          name="phone"
+          type="tel"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r7:-helptext"
+        />
+      </div>
+    </div>
+  </form>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;
+
+exports[`AboutYouForm > should render and show responsible fields 1`] = `
+<div>
+  <form
+    class="css-b93e9j"
+  >
+    <div
+      class="css-1gkent6"
+    >
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="name"
+          id="field-:r8:-label"
+        >
+          Nome
+        </label>
+        <input
+          aria-describedby="field-:r8:-helptext"
+          aria-label="name"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r8:"
+          name="name"
+          type="text"
+          value="John"
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r8:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="lastName"
+          id="field-:r9:-label"
+        >
+          Sobrenome
+        </label>
+        <input
+          aria-describedby="field-:r9:-helptext"
+          aria-label="lastName"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r9:"
+          name="lastName"
+          type="text"
+          value="Doe"
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r9:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="birthDate"
+          id="field-:ra:-label"
+        >
+          Data de nascimento
+        </label>
+        <input
+          aria-describedby="field-:ra:-helptext"
+          aria-label="birthDate"
+          class="chakra-input css-1cjy4zv"
+          data-testid="birthDate"
+          id="field-:ra:"
+          name="birthDate"
+          type="date"
+          value="2007-04-03"
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:ra:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="cpf"
+          id="field-:rb:-label"
+        >
+          CPF
+        </label>
+        <input
+          aria-describedby="field-:rb:-helptext"
+          aria-label="cpf"
+          class="chakra-input css-1cjy4zv"
+          id="field-:rb:"
+          name="cpf"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:rb:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="weight"
+          id="field-:rc:-label"
+        >
+          Peso
+        </label>
+        <input
+          aria-describedby="field-:rc:-helptext"
+          aria-label="weight"
+          class="chakra-input css-1cjy4zv"
+          id="field-:rc:"
+          name="weight"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:rc:-helptext"
+        >
+          Exemplo: 70,00
+        </div>
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="height"
+          id="field-:rd:-label"
+        >
+          Altura
+        </label>
+        <input
+          aria-describedby="field-:rd:-helptext"
+          aria-label="height"
+          class="chakra-input css-1cjy4zv"
+          id="field-:rd:"
+          name="height"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:rd:-helptext"
+        >
+          Exemplo: 1,70
+        </div>
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="email"
+          id="field-:re:-label"
+        >
+          Email
+        </label>
+        <input
+          aria-describedby="field-:re:-helptext"
+          aria-label="email"
+          class="chakra-input css-1cjy4zv"
+          id="field-:re:"
+          name="email"
+          type="email"
+          value="a@a.com"
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:re:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        data-focus=""
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          data-focus=""
+          for="phone"
+          id="field-:rf:-label"
+        >
+          Telefone
+        </label>
+        <input
+          aria-describedby="field-:rf:-helptext"
+          aria-label="phone"
+          class="chakra-input css-1cjy4zv"
+          id="field-:rf:"
+          name="phone"
+          type="tel"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:rf:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="responsibleName"
+          id="field-:rg:-label"
+        >
+          Nome do Responsável
+        </label>
+        <input
+          aria-label="responsibleName"
+          class="chakra-input css-1cjy4zv"
+          id="field-:rg:"
+          name="responsibleName"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="responsibleLastName"
+          id="field-:rh:-label"
+        >
+          Sobrenome do Responsável
+        </label>
+        <input
+          aria-label="responsibleLastName"
+          class="chakra-input css-1cjy4zv"
+          id="field-:rh:"
+          name="responsibleLastName"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="responsibleBirthDate"
+          id="field-:ri:-label"
+        >
+          Data de nascimento do Responsável
+        </label>
+        <input
+          aria-label="responsibleBirthDate"
+          class="chakra-input css-1cjy4zv"
+          data-testid="responsibleBirthDate"
+          id="field-:ri:"
+          name="responsibleBirthDate"
+          type="date"
+          value=""
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="responsibleCpf"
+          id="field-:rj:-label"
+        >
+          CPF do Responsável
+        </label>
+        <input
+          aria-label="responsibleCpf"
+          class="chakra-input css-1cjy4zv"
+          id="field-:rj:"
+          name="responsibleCpf"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </form>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;
