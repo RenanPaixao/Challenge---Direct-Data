@@ -102,9 +102,10 @@ const responsibleFieldsConfig: FieldConfig<AboutYouValues>[] = [
 ]
 
 export const AboutYouForm = ({ children }: PropsWithChildren) => {
-  const studentContext = useContext(StudentContext)
+  const { aboutYouInformation, setAboutYouInformation } = useContext(StudentContext)
   const [areOver18, setAreOver18] = useState(true)
 
+  const { responsible = null, ...aboutYou } = aboutYouInformation ?? {}
   const formik = useFormik<AboutYouValues>({
     initialValues: {
       name: '',
@@ -115,10 +116,11 @@ export const AboutYouForm = ({ children }: PropsWithChildren) => {
       height: '',
       email: '',
       phone: '',
-      responsibleName: '',
-      responsibleLastName: '',
-      responsibleBirthDate: '',
-      responsibleCpf: ''
+      responsibleName: responsible?.name ?? '',
+      responsibleLastName: responsible?.lastName ?? '',
+      responsibleBirthDate: responsible?.birthDate ?? '',
+      responsibleCpf: responsible?.cpf ?? '',
+      ...aboutYou
     },
     onSubmit: values => {
       const { responsibleName, responsibleLastName, responsibleBirthDate, responsibleCpf, ...rest } = values
@@ -127,10 +129,11 @@ export const AboutYouForm = ({ children }: PropsWithChildren) => {
         name: responsibleName,
         lastName: responsibleLastName,
         birthDate: responsibleBirthDate,
-        cpf: responsibleCpf
+        cpf: responsibleCpf,
+        ...aboutYouInformation
       }
 
-      studentContext.setAboutYouInformation({
+      setAboutYouInformation({
         ...rest,
         responsible
       })
@@ -148,22 +151,29 @@ export const AboutYouForm = ({ children }: PropsWithChildren) => {
     setAreOver18(age > 18)
   }, [formik.values.birthDate])
 
+  /**
+   * Render inputs based on the input configs, with all props needed .
+   * @param configs
+   */
+  function renderInputsBaseOnConfigs(configs: FieldConfig<AboutYouValues>[]) {
+    return configs.map(({ name, mask, ...rest }) => {
+      return <TheField
+        as={mask ? IMaskInput : undefined}
+        key={name}
+        mask={mask}
+        name={name}
+        {...rest}
+      />
+    })
+  }
+
   return <FormikProvider value={formik}>
     <Center as={'form'} onSubmit={formik.handleSubmit} flexDirection={'column'}>
       <SimpleGrid columns={[1, 2]} spacing={8}>
-        {fieldsConfig.map(({ name, mask, ...rest }) => {
-          return <TheField
-            as={mask ? IMaskInput : undefined}
-            key={name}
-            mask={mask}
-            name={name}
-            {...rest}
-          />
-        })}
+        {renderInputsBaseOnConfigs(fieldsConfig)}
         {
-          formik.touched.birthDate && !areOver18 && responsibleFieldsConfig.map(({ name, type, label }) => {
-            return <TheField key={name} label={label} type={type} name={name} />
-          })
+          !areOver18 &&
+          renderInputsBaseOnConfigs(responsibleFieldsConfig)
         }
       </SimpleGrid>
       {children}

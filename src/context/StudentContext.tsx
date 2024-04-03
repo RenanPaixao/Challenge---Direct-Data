@@ -1,5 +1,6 @@
-import { createContext, PropsWithChildren, useState } from 'react'
+import { createContext, PropsWithChildren, useEffect, useState } from 'react'
 import { AboutYouInformation } from './types'
+import { persistOnSessionStorage, retrieveFromSessionStorage } from '../utils/persistence.ts'
 
 export interface IProps {
   aboutYouInformation: AboutYouInformation | null
@@ -14,7 +15,14 @@ export const StudentContext = createContext<IProps>({
 StudentContext.displayName = 'StudentContext'
 
 export const StudentProvider = ({ children }: PropsWithChildren) => {
-  const [aboutYouInformation, setAboutYouInformation] = useState<AboutYouInformation | null>(null)
+  const sessionStorageKey = 'aboutYouInformation'
+  const [aboutYouInformation, setAboutYouInformation] = useState<AboutYouInformation | null>(() => {
+    return retrieveFromSessionStorage(sessionStorageKey)
+  })
+
+  useEffect(() => {
+    persistOnSessionStorage(sessionStorageKey, aboutYouInformation)
+  }, [aboutYouInformation])
 
   return <StudentContext.Provider value={{
     aboutYouInformation,

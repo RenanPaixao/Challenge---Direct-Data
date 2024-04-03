@@ -1,8 +1,8 @@
 
 export interface AboutYouInformation extends IdentityInformation {
   responsible: IdentityInformation | null
-  weight: number | string
-  height: number | string
+  weight: string
+  height: string
   email: string
   phone: string
 }
