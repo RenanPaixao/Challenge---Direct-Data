@@ -10,7 +10,7 @@ export const StepperContext = createContext<IProps | null>(null)
 StepperContext.displayName = 'StepperContext'
 
 export const StepperProvider = ({ children, ...rest }: PropsWithChildren<IProps>) => {
-  return <StepperContext.Provider value={{ ...rest }}>
+  return <StepperContext.Provider value={rest}>
     {children}
   </StepperContext.Provider>
 }

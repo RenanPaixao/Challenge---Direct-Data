@@ -6,10 +6,9 @@ import { FORM_MESSAGES } from '../../utils/constants.ts'
 import { StudentContext } from '../../context/StudentContext.tsx'
 import { FieldConfig } from './types'
 import { DateTime } from 'luxon'
-import { TheField } from '../TheField/TheField.tsx'
-import { IMaskInput } from 'react-imask'
-import { FormFooterWrapper } from './FormFooterWrapper.tsx'
 import { StepperContext } from '../../context/StepperContext.tsx'
+import { FormFooterWrapper } from '../FormFooterWrapper/FormFooterWrapper.tsx'
+import { renderInputsBaseOnConfigs } from '../../utils/forms.tsx'
 
 const { REQUIRED, INVALID_EMAIL } = FORM_MESSAGES
 
@@ -30,7 +29,7 @@ const schema = Yup.object({
 
 export type AboutYouValues = Yup.InferType<typeof schema>
 
-const fieldsConfig: FieldConfig<AboutYouValues>[]  = [
+const fieldsConfig: FieldConfig[]  = [
   {
     name: 'name',
     type: 'text',
@@ -59,7 +58,7 @@ const fieldsConfig: FieldConfig<AboutYouValues>[]  = [
     name: 'weight',
     type: 'text',
     label: 'Peso',
-    mask: ['000,00', '00,00'],
+    mask: Number,
     helpMessage: 'Exemplo: 70,00'
   },
   {
@@ -82,7 +81,7 @@ const fieldsConfig: FieldConfig<AboutYouValues>[]  = [
   }
 ]
 
-const responsibleFieldsConfig: FieldConfig<AboutYouValues>[] = [
+const responsibleFieldsConfig: FieldConfig[] = [
   {
     name: 'responsibleName',
     type: 'text',
@@ -110,7 +109,7 @@ const responsibleFieldsConfig: FieldConfig<AboutYouValues>[] = [
 ]
 
 export const AboutYouForm = (props: SimpleGridProps) => {
-  const {  goToNext } = useContext(StepperContext)!
+  const { goToNext } = useContext(StepperContext)!
   const { aboutYouInformation, setAboutYouInformation } = useContext(StudentContext)
   const [areOver18, setAreOver18] = useState(true)
 
@@ -158,26 +157,10 @@ export const AboutYouForm = (props: SimpleGridProps) => {
     if(!formik.values.birthDate) {
       return
     }
-    const age = DateTime.now().diff(DateTime.fromISO(formik.values.birthDate), 'years').years
 
+    const age = DateTime.now().diff(DateTime.fromISO(formik.values.birthDate), 'years').years
     setAreOver18(age > 18)
   }, [formik.values.birthDate])
-
-  /**
-   * Render inputs based on the input configs, with all props needed .
-   * @param configs
-   */
-  function renderInputsBaseOnConfigs(configs: FieldConfig<AboutYouValues>[]) {
-    return configs.map(({ name, mask, ...rest }) => {
-      return <TheField
-        as={mask ? IMaskInput : undefined}
-        key={name}
-        mask={mask}
-        name={name}
-        {...rest}
-      />
-    })
-  }
 
   return <FormikProvider value={formik}>
     <Center as={'form'} onSubmit={formik.handleSubmit} flexDirection={'column'}>

@@ -9,8 +9,8 @@ export interface AboutYouInformation extends IdentityInformation {
 
 export interface Address {
   street: string,
-  number: number,
-  complement: string,
+  number: string,
+  complement?: string,
   district: string,
   cep: string,
   city: string,
