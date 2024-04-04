@@ -24,7 +24,7 @@ interface IProps extends BoxProps{
 
 export const TheStepper = ({ steps, activeStep, ...rest }: IProps) => {
   return <Box
-    border={'thin solid #E2E8F0'}
+    border={'thin solid var(--chakra-colors-gray-300)'}
     borderRadius={8}
     p={8}
     {...rest}

@@ -4,6 +4,7 @@ import { TheStepper } from '../components/TheStepper/TheStepper.tsx'
 import { ReactElement, useContext } from 'react'
 import { StepperContext } from '../context/StepperContext.tsx'
 import { AddressForm } from '../components/AddressForm/AddressForm.tsx'
+import { ReviewStep } from '../components/ReviewStep/ReviewStep.tsx'
 export const SignUp = () => {
   const { steps, activeStep } = useContext(StepperContext)!
 
@@ -13,7 +14,7 @@ export const SignUp = () => {
       renderAccordingToStepper(activeStep, [
         <AboutYouForm key={activeStep}/>,
         <AddressForm key={activeStep}/>,
-        <div>Third step</div>
+        <ReviewStep key={activeStep}/>
       ])
     }
   </Center>
