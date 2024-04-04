@@ -137,8 +137,7 @@ export const AboutYouForm = (props: SimpleGridProps) => {
         name: responsibleName,
         lastName: responsibleLastName,
         birthDate: responsibleBirthDate,
-        cpf: responsibleCpf,
-        ...aboutYouInformation
+        cpf: responsibleCpf
       }
 
       setAboutYouInformation({
