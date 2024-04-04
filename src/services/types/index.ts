@@ -1,3 +1,5 @@
+import { AboutYouInformation, Address } from '../../context/types'
+
 export interface StudentModel extends IdentityInformationModel {
   responsavel: IdentityInformationModel | null,
   peso: number,
@@ -19,3 +21,5 @@ interface IdentityInformationModel {
   dataNascimento: string,
   cpf: string
 }
+
+export interface SubscribeInformation extends AboutYouInformation, Address{}
