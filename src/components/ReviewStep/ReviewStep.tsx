@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { StudentContext } from '../../context/StudentContext.tsx'
 import { Box, Button, Center } from '@chakra-ui/react'
 import { StepSummary } from './StepSummary.tsx'
@@ -6,11 +6,16 @@ import { FormFooterWrapper } from '../FormFooterWrapper/FormFooterWrapper.tsx'
 import { StepperContext } from '../../context/StepperContext.tsx'
 import { DateTime } from 'luxon'
 import { useNavigate } from 'react-router'
+import { subscribeService } from '../../services/subscribeService/subscribeService.ts'
+import { SESSION_STORAGE_KEYS } from '../../utils/constants.ts'
 
+const { ADDRESS, ABOUT_YOU_INFORMATION } = SESSION_STORAGE_KEYS
 export const ReviewStep = () => {
-  const { goToPrevious } = useContext(StepperContext)!
+  const { goToPrevious, setActiveStep } = useContext(StepperContext)!
   const { address, aboutYouInformation } = useContext(StudentContext)
   const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(false)
+
   const { responsible, ...aboutYouWithoutResponsible } = aboutYouInformation!
 
   const aboutYouWithFormattedDate = formatBirthDate(aboutYouWithoutResponsible)
@@ -36,8 +41,26 @@ export const ReviewStep = () => {
   /**
    * Navigate to the success page.
    */
-  function goToSuccessPage() {
-    navigate('/success')
+  async function sendDataAndGoToSuccessPage() {
+    if(!aboutYouInformation || !address) {
+      console.error('Missing data!')
+      return
+    }
+    setIsLoading(true)
+
+    try {
+      await subscribeService.create({ ...aboutYouInformation, ...address })
+
+      sessionStorage.removeItem(ABOUT_YOU_INFORMATION)
+      sessionStorage.removeItem(ADDRESS)
+      setActiveStep(0)
+
+      navigate('/success', { replace: true })
+    }catch(e) {
+      console.error(e)
+    }finally {
+      setIsLoading(false)
+    }
   }
 
   return <Center flexDirection={'column'}>
@@ -48,17 +71,17 @@ export const ReviewStep = () => {
         ))}
     </Box>
     <FormFooterWrapper mt={8}>
-      <Button onClick={goToPrevious}>Voltar</Button>
-      <Button onClick={goToSuccessPage}>Avançar</Button>
+      <Button onClick={goToPrevious} isLoading={isLoading}>Voltar</Button>
+      <Button onClick={sendDataAndGoToSuccessPage} isLoading={isLoading}>Avançar</Button>
     </FormFooterWrapper>
   </Center>
 }
 
 /**
  * Map object keys to Portuguese.
- * @param object
+ * @param obj
  */
-function mapObjectKeysToPortuguese(object: Record<string, any>) {
+function mapObjectKeysToPortuguese(obj: Record<string, any>) {
   const allKeys: Record<string, string> = {
     name: 'Nome',
     lastName: 'Sobrenome',
@@ -82,8 +105,8 @@ function mapObjectKeysToPortuguese(object: Record<string, any>) {
     city: 'Cidade',
     state: 'Estado'
   }
-  return Object.keys(object).reduce((acc, key) => {
-    acc[allKeys[key]] = object[key]
+  return Object.keys(obj).reduce((acc, key) => {
+    acc[allKeys[key]] = obj[key]
     return acc
   }, {} as Record<string, string>)
 }

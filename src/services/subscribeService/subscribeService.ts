@@ -3,14 +3,14 @@ import { SubscribeInformation } from '../types'
 import { mapSubscribeInformationToModel } from '../../helpers/mapToModel.ts'
 
 class SubscribeServiceImpl {
-  instance =  axios.create({
+  private instance =  axios.create({
     baseURL: import.meta.env.VITE_API_URL,
     headers: {
       Token: import.meta.env.VITE_API_TOKEN
     }
   })
 
-  endpoint = '/subscribe'
+  private endpoint = '/Subscribe'
 
   async getAll() {
     return this.instance.get(this.endpoint)

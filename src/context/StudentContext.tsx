@@ -1,7 +1,9 @@
 import { createContext, PropsWithChildren, useEffect, useState } from 'react'
 import { AboutYouInformation, Address } from './types'
 import { persistOnSessionStorage, retrieveFromSessionStorage } from '../utils/persistence.ts'
+import { SESSION_STORAGE_KEYS } from '../utils/constants.ts'
 
+const { ADDRESS,ABOUT_YOU_INFORMATION } = SESSION_STORAGE_KEYS
 export interface StudentContextProps {
   aboutYouInformation: AboutYouInformation | null
   setAboutYouInformation: (aboutYouInformation: AboutYouInformation) => void
@@ -19,20 +21,17 @@ export const StudentContext = createContext<StudentContextProps>({
 StudentContext.displayName = 'StudentContext'
 
 export const StudentProvider = ({ children }: PropsWithChildren) => {
-  const aboutYouStorageKey = 'aboutYouInformation'
-  const addressStorageKey = 'address'
-
   const [aboutYouInformation, setAboutYouInformation] = useState<AboutYouInformation | null>(() => {
-    return retrieveFromSessionStorage(aboutYouStorageKey)
+    return retrieveFromSessionStorage(ABOUT_YOU_INFORMATION)
   })
 
   const [address, setAddress] = useState<Address | null>(() => {
-    return retrieveFromSessionStorage(addressStorageKey)
+    return retrieveFromSessionStorage(ADDRESS)
   })
 
   useEffect(() => {
-    persistOnSessionStorage(aboutYouStorageKey, aboutYouInformation)
-    persistOnSessionStorage(addressStorageKey, address)
+    persistOnSessionStorage(ABOUT_YOU_INFORMATION, aboutYouInformation)
+    persistOnSessionStorage(ADDRESS, address)
   }, [aboutYouInformation, address])
 
   return <StudentContext.Provider value={{
