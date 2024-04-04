@@ -5,10 +5,12 @@ import { StepSummary } from './StepSummary.tsx'
 import { FormFooterWrapper } from '../FormFooterWrapper/FormFooterWrapper.tsx'
 import { StepperContext } from '../../context/StepperContext.tsx'
 import { DateTime } from 'luxon'
+import { useNavigate } from 'react-router'
 
 export const ReviewStep = () => {
   const { goToPrevious } = useContext(StepperContext)!
   const { address, aboutYouInformation } = useContext(StudentContext)
+  const navigate = useNavigate()
   const { responsible, ...aboutYouWithoutResponsible } = aboutYouInformation!
 
   const aboutYouWithFormattedDate = formatBirthDate(aboutYouWithoutResponsible)
@@ -31,6 +33,13 @@ export const ReviewStep = () => {
     }
   ]
 
+  /**
+   * Navigate to the success page.
+   */
+  function goToSuccessPage() {
+    navigate('/success')
+  }
+
   return <Center flexDirection={'column'}>
     <Box w={'75%'} minW={'600px'}>
       {
@@ -40,7 +49,7 @@ export const ReviewStep = () => {
     </Box>
     <FormFooterWrapper mt={8}>
       <Button onClick={goToPrevious}>Voltar</Button>
-      <Button>Avançar</Button>
+      <Button onClick={goToSuccessPage}>Avançar</Button>
     </FormFooterWrapper>
   </Center>
 }
