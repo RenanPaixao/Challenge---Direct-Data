@@ -1,0 +1,333 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ReviewStep > should render 1`] = `
+<div>
+  <div
+    class="css-b93e9j"
+  >
+    <div
+      class="css-1lu5lqd"
+    >
+      <div
+        class="css-1ayfwcb"
+      >
+        <h3
+          class="chakra-heading css-2ghjnd"
+        >
+          Sobre Você
+        </h3>
+        <div
+          class="css-1lcfq1r"
+        >
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Sobre Você - Nome"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Nome
+              </strong>
+            </p>
+            : 
+            test name
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Sobre Você - Sobrenome"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Sobrenome
+              </strong>
+            </p>
+            : 
+            test last name
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Sobre Você - CPF"
+              class="chakra-text css-0"
+            >
+              <strong>
+                CPF
+              </strong>
+            </p>
+            : 
+            123.456.789-00
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Sobre Você - Email"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Email
+              </strong>
+            </p>
+            : 
+            test@test.com
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Sobre Você - Altura"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Altura
+              </strong>
+            </p>
+            : 
+            1.80
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Sobre Você - Peso"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Peso
+              </strong>
+            </p>
+            : 
+            70
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Sobre Você - Data de nascimento"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Data de nascimento
+              </strong>
+            </p>
+            : 
+            01/01/2015
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Sobre Você - Telefone"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Telefone
+              </strong>
+            </p>
+            : 
+            1234567890
+          </div>
+          <h4
+            class="chakra-heading css-mhi7l6"
+          >
+            <strong>
+              Responsável
+            </strong>
+          </h4>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Responsável - Nome"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Nome
+              </strong>
+            </p>
+            : 
+            test responsible name
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Responsável - CPF"
+              class="chakra-text css-0"
+            >
+              <strong>
+                CPF
+              </strong>
+            </p>
+            : 
+            123.456.789-00
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Responsável - Data de nascimento"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Data de nascimento
+              </strong>
+            </p>
+            : 
+            03/02/2000
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Responsável - Sobrenome"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Sobrenome
+              </strong>
+            </p>
+            : 
+            test responsible last name
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-1ayfwcb"
+      >
+        <h3
+          class="chakra-heading css-2ghjnd"
+        >
+          Endereço
+        </h3>
+        <div
+          class="css-1lcfq1r"
+        >
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Endereço - CEP"
+              class="chakra-text css-0"
+            >
+              <strong>
+                CEP
+              </strong>
+            </p>
+            : 
+            12345-123
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Endereço - Bairro"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Bairro
+              </strong>
+            </p>
+            : 
+            test district
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Endereço - Rua"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Rua
+              </strong>
+            </p>
+            : 
+            test street
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Endereço - Complemento"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Complemento
+              </strong>
+            </p>
+            : 
+            test complement
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Endereço - Estado"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Estado
+              </strong>
+            </p>
+            : 
+            al
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Endereço - Cidade"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Cidade
+              </strong>
+            </p>
+            : 
+            test city
+          </div>
+          <div
+            class="css-k008qs"
+          >
+            <p
+              aria-label="Endereço - Número"
+              class="chakra-text css-0"
+            >
+              <strong>
+                Número
+              </strong>
+            </p>
+            : 
+            12
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-2srqce"
+    >
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Voltar
+      </button>
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Avançar
+      </button>
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;

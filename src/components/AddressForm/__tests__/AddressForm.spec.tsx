@@ -49,7 +49,7 @@ const formValues: FormValues = {
   }
 }
 
-describe('AboutYouForm', () => {
+describe('AddressForm', () => {
   it('should render', async () => {
     const { container } = renderWithStudentContext(<AddressForm/>)
 

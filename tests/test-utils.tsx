@@ -68,7 +68,8 @@ function renderWithStudentContext(ui: ReactElement, contextValues?: Partial<Stud
         complement: '',
         state: '',
         city: '',
-        number: ''
+        number: '',
+        ...contextValues?.address
       },
       setAddress: contextValues?.setAddress || (() => {})
     }}>

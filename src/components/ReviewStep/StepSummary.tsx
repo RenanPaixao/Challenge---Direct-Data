@@ -19,7 +19,7 @@ export const StepSummary = ({ sectionTitle, sectionContent, nested, ...rest }: I
       {
         entries.map(([key, value]) => (
           <Flex key={key}>
-            <Text><strong>{key}</strong></Text>: {value}
+            <Text aria-label={`${sectionTitle} - ${key}`}><strong>{key}</strong></Text>: {value}
           </Flex>
         ))
       }
@@ -32,7 +32,7 @@ export const StepSummary = ({ sectionTitle, sectionContent, nested, ...rest }: I
             {
               Object.entries(sectionContent).map(([key, value]) => (
                 <Flex key={key}>
-                  <Text><strong>{key}</strong></Text>: {value}
+                  <Text aria-label={`${sectionTitle} - ${key}`}><strong>{key}</strong></Text>: {value}
                 </Flex>
               ))
             }
