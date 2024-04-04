@@ -2,14 +2,14 @@ import { createContext, PropsWithChildren, useEffect, useState } from 'react'
 import { AboutYouInformation, Address } from './types'
 import { persistOnSessionStorage, retrieveFromSessionStorage } from '../utils/persistence.ts'
 
-export interface IProps {
+export interface StudentContextProps {
   aboutYouInformation: AboutYouInformation | null
   setAboutYouInformation: (aboutYouInformation: AboutYouInformation) => void
   address: Address | null
   setAddress: (address: Address) => void
 }
 
-export const StudentContext = createContext<IProps>({
+export const StudentContext = createContext<StudentContextProps>({
   aboutYouInformation: null,
   setAboutYouInformation: () => {},
   address: null,

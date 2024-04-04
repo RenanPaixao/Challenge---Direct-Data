@@ -214,6 +214,16 @@ exports[`AboutYouForm > should render 1`] = `
         />
       </div>
     </div>
+    <div
+      class="css-um72kk"
+    >
+      <button
+        class="chakra-button css-ez23ye"
+        type="submit"
+      >
+        Avançar
+      </button>
+    </div>
   </form>
   <span
     hidden=""
@@ -299,7 +309,7 @@ exports[`AboutYouForm > should render and show responsible fields 1`] = `
           id="field-:ra:"
           name="birthDate"
           type="date"
-          value="2007-04-03"
+          value="2015-12-12"
         />
         <div
           class="chakra-form__helper-text css-1fjml25"
@@ -518,6 +528,16 @@ exports[`AboutYouForm > should render and show responsible fields 1`] = `
           value=""
         />
       </div>
+    </div>
+    <div
+      class="css-um72kk"
+    >
+      <button
+        class="chakra-button css-ez23ye"
+        type="submit"
+      >
+        Avançar
+      </button>
     </div>
   </form>
   <span

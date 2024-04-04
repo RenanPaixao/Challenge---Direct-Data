@@ -1,0 +1,209 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AboutYouForm > should render 1`] = `
+<div>
+  <form
+    class="css-b93e9j"
+  >
+    <div
+      class="css-1gkent6"
+    >
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="cep"
+          id="field-:r0:-label"
+        >
+          CEP
+        </label>
+        <input
+          aria-describedby="field-:r0:-helptext"
+          aria-label="cep"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r0:"
+          name="cep"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r0:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="street"
+          id="field-:r1:-label"
+        >
+          Logradouro
+        </label>
+        <input
+          aria-describedby="field-:r1:-helptext"
+          aria-label="street"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r1:"
+          name="street"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r1:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="district"
+          id="field-:r2:-label"
+        >
+          Bairro
+        </label>
+        <input
+          aria-describedby="field-:r2:-helptext"
+          aria-label="district"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r2:"
+          name="district"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r2:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="number"
+          id="field-:r3:-label"
+        >
+          Número
+        </label>
+        <input
+          aria-describedby="field-:r3:-helptext"
+          aria-label="number"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r3:"
+          name="number"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r3:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="city"
+          id="field-:r4:-label"
+        >
+          Cidade
+        </label>
+        <input
+          aria-describedby="field-:r4:-helptext"
+          aria-label="city"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r4:"
+          name="city"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r4:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="state"
+          id="field-:r5:-label"
+        >
+          Estado
+        </label>
+        <input
+          aria-describedby="field-:r5:-helptext"
+          aria-label="state"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r5:"
+          name="state"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r5:-helptext"
+        />
+      </div>
+      <div
+        class="chakra-form-control css-6h2d2t"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="complement"
+          id="field-:r6:-label"
+        >
+          Complemento
+        </label>
+        <input
+          aria-describedby="field-:r6:-helptext"
+          aria-label="complement"
+          class="chakra-input css-1cjy4zv"
+          id="field-:r6:"
+          name="complement"
+          type="text"
+          value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:r6:-helptext"
+        />
+      </div>
+    </div>
+    <div
+      class="css-1udc1ya"
+    >
+      <button
+        class="chakra-button css-ez23ye"
+        type="button"
+      >
+        Voltar
+      </button>
+      <button
+        class="chakra-button css-ez23ye"
+        type="submit"
+      >
+        Avançar
+      </button>
+    </div>
+  </form>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;

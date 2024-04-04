@@ -1,14 +1,11 @@
-import { customRender, user } from '../../../../tests/test-utils.tsx'
+import {
+  fillForm,
+  FormField,
+  renderWithStudentContext
+} from '../../../../tests/test-utils.tsx'
 import { AboutYouForm } from '../AboutYouForm.tsx'
 import { AboutYouInformation } from '../../../context/types'
-import {  screen } from '@testing-library/dom'
-import { DateTime } from 'luxon'
 
-interface FormField {
-  name: string
-  value: string
-  role: string
-}
 type FormValues = Record<keyof Omit<AboutYouInformation, 'responsible'>, FormField>
 
 const formValues: FormValues = {
@@ -56,31 +53,19 @@ const formValues: FormValues = {
 
 describe('AboutYouForm', () => {
   it('should render', async () => {
-    const { container } = customRender(<AboutYouForm />)
+    const { container } = renderWithStudentContext(<AboutYouForm />)
 
     expect(container).toMatchSnapshot()
   })
 
   it('should render and show responsible fields', async () => {
-    const { container } = customRender(<AboutYouForm />)
-    await fillForm({
+    const { container } = renderWithStudentContext(<AboutYouForm />)
+    await fillForm<FormValues>({
       ...formValues,
-      birthDate: { ...formValues.birthDate, value: DateTime.now().minus({ years: 17 }).toISODate() }
+      birthDate: { ...formValues.birthDate, value: '2015-12-12' }
     })
 
     expect(container).toMatchSnapshot()
   })
 })
 
-/**
- * Fill the form with the given values.
- * @param formValues
- */
-async function fillForm(formValues: Partial<FormValues>) {
-  const { getByRole, getByTestId } = screen
-
-  for (const { name, role, value } of Object.values(formValues)) {
-    const input = role === 'Date' ? getByTestId(name) : getByRole(role, { name: new RegExp(`\\b${name}\\b`) })
-    await user.type(input, value)
-  }
-}
