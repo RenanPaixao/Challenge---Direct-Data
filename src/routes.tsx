@@ -4,6 +4,7 @@ import { SignUp } from './pages/SignUp.tsx'
 import { StepperProvider } from './context/StepperContext.tsx'
 import { useSteps } from '@chakra-ui/react'
 import { SuccessfulRegister } from './pages/SuccessfulRegister.tsx'
+import { Home } from './pages/Home.tsx'
 
 const signUpSteps = [
   { title: 'Sobre Você' },
@@ -23,6 +24,9 @@ export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={
+          <Home />
+        } />
         <Route path="/sign-up" element={
           <StepperProvider {...signUpStepHandler} steps={signUpSteps}>
             <SignUp />
