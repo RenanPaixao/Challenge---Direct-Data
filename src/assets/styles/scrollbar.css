@@ -1,0 +1,21 @@
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+    background: var(--chakra-colors-purple-200);
+    border-radius: 16px;
+}
+
+/* Hover no Thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--chakra-colors-purple-300)
+}
