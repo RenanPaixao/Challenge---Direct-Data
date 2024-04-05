@@ -1,4 +1,5 @@
 import { StudentModel, SubscribeInformation } from '../services/types'
+import { parseStringNumberToNumber } from '../utils/number.ts'
 
 /**
  * Map the subscribe information to the student model.
@@ -6,24 +7,29 @@ import { StudentModel, SubscribeInformation } from '../services/types'
  */
 export function mapSubscribeInformationToModel(subscribeInformation: Partial<SubscribeInformation>): Partial<StudentModel> {
   const { responsible } = subscribeInformation
+
+  const parseToNumber = (value?: string) => {
+    return value !== undefined ? parseStringNumberToNumber(value) : undefined
+  }
+
   return {
     nome: subscribeInformation.name,
     sobrenome: subscribeInformation.lastName,
     dataNascimento: subscribeInformation.birthDate,
-    cpf: subscribeInformation.cpf,
+    cpf: subscribeInformation.cpf ? subscribeInformation.cpf.replace(/\D/g, '') : undefined,
     responsavel: responsible ? {
       nome: responsible.name,
       sobrenome: responsible.lastName,
       dataNascimento: responsible.birthDate,
-      cpf: responsible.cpf
+      cpf: responsible.cpf.replace(/\D/g, '')
     }
       : null,
-    peso: Number(subscribeInformation.weight),
-    altura: Number(subscribeInformation.height),
+    peso: parseToNumber(subscribeInformation.weight),
+    altura: parseToNumber(subscribeInformation.height),
     email: subscribeInformation.email,
-    telefoneContato: subscribeInformation.phone,
+    telefoneContato: subscribeInformation.phone ? subscribeInformation.phone.replace(/\D/g, '') : undefined,
     logradouro: subscribeInformation.street,
-    numero: Number(subscribeInformation.number),
+    numero: parseToNumber(subscribeInformation.number),
     complemento: subscribeInformation.complement,
     bairro: subscribeInformation.district,
     cep: subscribeInformation.cep,

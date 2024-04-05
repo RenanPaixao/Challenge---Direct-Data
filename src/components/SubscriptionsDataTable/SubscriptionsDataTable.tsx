@@ -13,6 +13,14 @@ interface Student extends Omit<AboutYouInformation, 'responsible'>, Address{
   responsibleBirthDate?: string
 }
 
+const cpfFormatter = (cpf: string) => {
+  return cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4')
+}
+
+const phoneFormatter = (phone: string) => {
+  return phone.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3')
+}
+
 const columns: ColDef<Student>[] = [
   {
     field: 'name',
@@ -29,7 +37,8 @@ const columns: ColDef<Student>[] = [
   },
   {
     field: 'cpf',
-    headerName: 'CPF'
+    headerName: 'CPF',
+    valueGetter: params => cpfFormatter(params.data?.cpf as string)
   },
   {
     field: 'email',
@@ -37,7 +46,8 @@ const columns: ColDef<Student>[] = [
   },
   {
     field: 'phone',
-    headerName: 'Telefone'
+    headerName: 'Telefone',
+    valueFormatter: params => phoneFormatter(params.value as string)
   },
   {
     field: 'street',
@@ -88,7 +98,8 @@ const columns: ColDef<Student>[] = [
   },
   {
     field: 'responsibleCpf',
-    headerName: 'CPF do Responsável'
+    headerName: 'CPF do Responsável',
+    valueGetter: params => params.data?.cpf ? cpfFormatter(params.data?.cpf as string) : '-'
   },
   {
     field: 'responsibleBirthDate',
