@@ -3,6 +3,8 @@ import { DataTable } from '../DataTable/DataTable.tsx'
 import { Box, BoxProps } from '@chakra-ui/react'
 import { ColDef } from 'ag-grid-community'
 import { formatDate } from '../../utils/date.ts'
+import { useEffect, useState } from 'react'
+import { subscribeService } from '../../services/subscribeService/subscribeService.ts'
 
 interface Student extends Omit<AboutYouInformation, 'responsible'>, Address{
   responsibleName?: string
@@ -10,41 +12,6 @@ interface Student extends Omit<AboutYouInformation, 'responsible'>, Address{
   responsibleCpf?: string
   responsibleBirthDate?: string
 }
-
-const data: Student[] = [
-  {
-    name: 'John',
-    lastName: 'Doe',
-    birthDate: '1990-01-01',
-    cpf: '123.456.789-00',
-    email: 'a@a.com',
-    phone: '123456789',
-    street: '123 Main St',
-    city: 'Springfield',
-    state: 'IL',
-    cep: '12345-123',
-    number: '123',
-    weight: '70',
-    height: '1.75',
-    district: 'Downtown'
-  },
-  {
-    name: 'Jane',
-    lastName: 'Doe',
-    birthDate: '1990-01-01',
-    cpf: '123.456.789-00',
-    email: 'b@a.com',
-    phone: '123456789',
-    street: '123 Main St',
-    city: 'Springfield',
-    state: 'IL',
-    cep: '12345-123',
-    number: '123',
-    weight: '70',
-    height: '1.75',
-    district: 'Downtown'
-  }
-]
 
 const columns: ColDef<Student>[] = [
   {
@@ -131,6 +98,20 @@ const columns: ColDef<Student>[] = [
 ]
 
 export const SubscriptionsDataTable = (props: BoxProps) => {
+  const [data, setData] = useState<Student[]>([])
+
+  useEffect(() => {
+    /**
+     * Fetch the data from the api to populate the table.
+     */
+    async function fetchData() {
+      const response = await subscribeService.getAll()
+
+      setData(response)
+    }
+
+    fetchData()
+  }, [])
   return <Box
     width={'100%'}
     borderRadius={8}

@@ -31,3 +31,33 @@ export function mapSubscribeInformationToModel(subscribeInformation: Partial<Sub
     uf: subscribeInformation.state
   }
 }
+
+/**
+ * Map the subscribe api response to the subscribe information.
+ * @param subscribeInfo
+ */
+export function mapSubscribeApiResponse(subscribeInfo: Partial<StudentModel>): Partial<SubscribeInformation> {
+  return {
+    name: subscribeInfo.nome,
+    lastName: subscribeInfo.sobrenome,
+    cep: subscribeInfo.cep,
+    district: subscribeInfo.bairro,
+    complement: subscribeInfo.complemento,
+    city: subscribeInfo.cidade,
+    state: subscribeInfo.uf,
+    number: subscribeInfo.numero !== undefined ? subscribeInfo.numero.toString() : undefined,
+    street: subscribeInfo.logradouro,
+    weight: subscribeInfo.peso !== undefined ? subscribeInfo.peso.toString() : undefined,
+    height: subscribeInfo.altura !== undefined ? subscribeInfo.altura.toString() : undefined,
+    email: subscribeInfo.email,
+    cpf: subscribeInfo.cpf,
+    birthDate: subscribeInfo.dataNascimento,
+    phone: subscribeInfo.telefoneContato,
+    responsible: subscribeInfo.responsavel ? {
+      name: subscribeInfo.responsavel.nome,
+      lastName: subscribeInfo.responsavel.sobrenome,
+      cpf: subscribeInfo.responsavel.cpf,
+      birthDate: subscribeInfo.responsavel.dataNascimento
+    } : null
+  }
+}

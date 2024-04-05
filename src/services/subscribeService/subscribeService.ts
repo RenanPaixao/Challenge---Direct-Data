@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { SubscribeInformation } from '../types'
-import { mapSubscribeInformationToModel } from '../../helpers/mapToModel.ts'
+import { mapSubscribeApiResponse, mapSubscribeInformationToModel } from '../../helpers/mapToModel.ts'
 
 class SubscribeServiceImpl {
   private instance =  axios.create({
@@ -13,7 +13,13 @@ class SubscribeServiceImpl {
   private endpoint = '/Subscribe'
 
   async getAll() {
-    return this.instance.get(this.endpoint)
+    const { data }  = await this.instance.get<{ mensagem: string, retorno: SubscribeInformation[] }>(this.endpoint)
+
+    // This is a workaround to remove the empty objects from the response that I had to do because wrong data added.
+    // I could remove it, but I don't have access to a delete endpoint or a way to remove the data from the database.
+    const returnWithoutGarbage = data.retorno.filter(subscribeInfo => Object.keys(subscribeInfo).length)
+
+    return returnWithoutGarbage.map(subscribeInfo => mapSubscribeApiResponse(subscribeInfo)) as SubscribeInformation[]
   }
 
   async getByCpf(cpf: string) {
