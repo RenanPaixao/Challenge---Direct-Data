@@ -4,10 +4,10 @@ import { Box, Button, Center } from '@chakra-ui/react'
 import { StepSummary } from './StepSummary.tsx'
 import { FormFooterWrapper } from '../FormFooterWrapper/FormFooterWrapper.tsx'
 import { StepperContext } from '../../context/StepperContext.tsx'
-import { DateTime } from 'luxon'
 import { useNavigate } from 'react-router'
 import { subscribeService } from '../../services/subscribeService/subscribeService.ts'
 import { SESSION_STORAGE_KEYS } from '../../utils/constants.ts'
+import { formatDate } from '../../utils/date.ts'
 
 const { ADDRESS, ABOUT_YOU_INFORMATION } = SESSION_STORAGE_KEYS
 export const ReviewStep = () => {
@@ -117,6 +117,6 @@ function mapObjectKeysToPortuguese(obj: Record<string, any>) {
 function formatBirthDate(object: Record<string, any>) {
   return {
     ...object,
-    birthDate: DateTime.fromISO(object.birthDate).toFormat('dd/MM/yyyy')
+    birthDate: formatDate(object.birthDate)
   }
 }
