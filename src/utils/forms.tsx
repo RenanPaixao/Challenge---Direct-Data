@@ -1,17 +1,22 @@
-import { FormikErrors, FormikTouched } from 'formik'
 import { IMaskInput } from 'react-imask'
 import { FieldConfig } from '../components/AboutYouForm/types'
 import { TheField } from '../components/TheField/TheField.tsx'
+import { isCPF } from 'brazilian-values'
+import { FORM_MESSAGES } from './constants.ts'
+
+const {  INVALID_CPF } = FORM_MESSAGES
 
 /**
- * Check if a field has an error.
- *
- * @param name - The name of the field.
- * @param touched - The object with all touched fields.
- * @param errors - The object with all errors.
+ * Tests if a CPF is valid in a YUP validation.
+ * @param value
+ * @param ctx
  */
-export function hasFormikError<T>(name: keyof T, touched: FormikTouched<T>, errors: FormikErrors<T>): boolean {
-  return !!touched[name] && !!errors[name]
+export function testCPF(value: string, ctx: any) {
+  if (!isCPF(value)) {
+    return ctx.createError({ message: INVALID_CPF })
+  }
+
+  return true
 }
 
 /**
