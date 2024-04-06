@@ -1,0 +1,8 @@
+
+.home-body {
+    background-image: url("../images/main-boxer.webp") !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: right !important;
+    background-color: var(--chakra-colors-purple-500) !important;
+}

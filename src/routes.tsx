@@ -5,6 +5,8 @@ import { StepperProvider } from './context/StepperContext.tsx'
 import { useSteps } from '@chakra-ui/react'
 import { SuccessfulRegister } from './pages/SuccessfulRegister.tsx'
 import { Home } from './pages/Home.tsx'
+import { DefaultLayout } from './Layouts/default.tsx'
+import { AllStudents } from './pages/AllStudents.tsx'
 
 const signUpSteps = [
   { title: 'Sobre Você' },
@@ -28,12 +30,21 @@ export default function AppRouter() {
           <Home />
         } />
         <Route path="/sign-up" element={
-          <StepperProvider {...signUpStepHandler} steps={signUpSteps}>
-            <SignUp />
-          </StepperProvider>
+          <DefaultLayout>
+            <StepperProvider {...signUpStepHandler} steps={signUpSteps}>
+              <SignUp />
+            </StepperProvider>
+          </DefaultLayout>
         } />
         <Route path="/success" element={
-          <SuccessfulRegister/>
+          <DefaultLayout>
+            <SuccessfulRegister/>
+          </DefaultLayout>
+        } />
+        <Route path="/all-students" element={
+          <DefaultLayout>
+            <AllStudents />
+          </DefaultLayout>
         } />
         <Route path="*" element={<NotFound />} />
       </Routes>
