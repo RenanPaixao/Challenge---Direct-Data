@@ -23,8 +23,8 @@ class CepServiceImpl {
   async getCep(cep: string): Promise<MappedCep> {
     const { data } = await this.instance.get(`${cep}/json`)
 
-    if (!data) {
-      throw new Error('CEP não encontrado')
+    if (data.erro) {
+      throw new Error('CEP not found!')
     }
 
     return mapCepResponse(data)
