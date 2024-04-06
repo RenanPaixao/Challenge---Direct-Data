@@ -9,16 +9,16 @@ import * as Yup from 'yup'
 import { FORM_MESSAGES } from '../../utils/constants.ts'
 import { StudentContext } from '../../context/StudentContext.tsx'
 
-const { REQUIRED, STATE_MIN_LENGTH } = FORM_MESSAGES
+const { REQUIRED, MAX_LENGTH } = FORM_MESSAGES
 
 const schema = Yup.object({
   cep: Yup.string().required(REQUIRED),
-  street: Yup.string().required(REQUIRED),
-  district: Yup.string().required(REQUIRED),
-  number: Yup.string().required(REQUIRED),
-  city: Yup.string().required(REQUIRED),
-  state: Yup.string().required(REQUIRED).min(2, STATE_MIN_LENGTH),
-  complement: Yup.string()
+  street: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
+  district: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
+  number: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(10)),
+  city: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
+  state: Yup.string().required(REQUIRED),
+  complement: Yup.string().max(50, MAX_LENGTH(50))
 })
 
 type FormValues = Yup.InferType<typeof schema>

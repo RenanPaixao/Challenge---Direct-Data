@@ -10,19 +10,19 @@ import { StepperContext } from '../../context/StepperContext.tsx'
 import { FormFooterWrapper } from '../FormFooterWrapper/FormFooterWrapper.tsx'
 import { renderInputsBaseOnConfigs } from '../../utils/forms.tsx'
 
-const { REQUIRED, INVALID_EMAIL } = FORM_MESSAGES
+const { REQUIRED, INVALID_EMAIL, MAX_LENGTH } = FORM_MESSAGES
 
 const schema = Yup.object({
-  name: Yup.string().required(REQUIRED),
-  lastName: Yup.string().required(REQUIRED),
+  name: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
+  lastName: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
   birthDate: Yup.string().required(REQUIRED),
   cpf: Yup.string().required(REQUIRED),
   weight: Yup.string().required(REQUIRED),
   height: Yup.string().required(REQUIRED),
   email: Yup.string().required(REQUIRED).email(INVALID_EMAIL),
   phone: Yup.string().required(REQUIRED),
-  responsibleName: Yup.string().required(REQUIRED),
-  responsibleLastName: Yup.string().required(REQUIRED),
+  responsibleName: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
+  responsibleLastName: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
   responsibleBirthDate: Yup.string().required(REQUIRED),
   responsibleCpf: Yup.string().required(REQUIRED)
 })
