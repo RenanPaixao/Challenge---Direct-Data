@@ -1,17 +1,10 @@
-import { AboutYouInformation, Address } from '../../context/types'
 import { DataTable } from '../DataTable/DataTable.tsx'
 import { Box, BoxProps } from '@chakra-ui/react'
-import { ColDef } from 'ag-grid-community'
+import { CellValueChangedEvent, ColDef } from 'ag-grid-community'
 import { formatDate } from '../../utils/date.ts'
 import { useEffect, useState } from 'react'
 import { subscribeService } from '../../services/subscribeService/subscribeService.ts'
-
-interface Student extends Omit<AboutYouInformation, 'responsible'>, Address{
-  responsibleName?: string
-  responsibleLastName?: string
-  responsibleCpf?: string
-  responsibleBirthDate?: string
-}
+import { SubscribeInformation } from '../../services/types'
 
 const cpfFormatter = (cpf: string) => {
   return cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4')
@@ -21,7 +14,7 @@ const phoneFormatter = (phone: string) => {
   return phone.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3')
 }
 
-const columns: ColDef<Student>[] = [
+const columns: ColDef<SubscribeInformation>[] = [
   {
     field: 'name',
     headerName: 'Nome'
@@ -86,30 +79,31 @@ const columns: ColDef<Student>[] = [
   },
   {
     field: 'complement',
-    headerName: 'Complemento'
+    headerName: 'Complemento',
+    valueFormatter: params => params.value ? params.value : '-'
   },
   {
-    field: 'responsibleName',
+    field: 'responsible.name',
     headerName: 'Nome do Responsável'
   },
   {
-    field: 'responsibleLastName',
+    field: 'responsible.lastName',
     headerName: 'Sobrenome do Responsável'
   },
   {
-    field: 'responsibleCpf',
+    field: 'responsible.cpf',
     headerName: 'CPF do Responsável',
     valueGetter: params => params.data?.cpf ? cpfFormatter(params.data?.cpf as string) : '-'
   },
   {
-    field: 'responsibleBirthDate',
+    field: 'responsible.birthDate',
     headerName: 'Data de Nascimento do Responsável',
     valueFormatter: params => params.value ? formatDate(params.value as string) : '-'
   }
 ]
 
 export const SubscriptionsDataTable = (props: BoxProps) => {
-  const [data, setData] = useState<Student[]>([])
+  const [data, setData] = useState<SubscribeInformation[]>([])
 
   useEffect(() => {
     /**
@@ -123,11 +117,42 @@ export const SubscriptionsDataTable = (props: BoxProps) => {
 
     fetchData()
   }, [])
+
   return <Box
     width={'100%'}
     borderRadius={8}
     {...props}
   >
-    <DataTable rowData={data} columnDefs={columns} />
+    <DataTable rowData={data} columnDefs={columns} onCellValueChanged={onCellValueChanged}/>
   </Box>
+}
+
+/**
+ * Update the data on the api when a cell value is changed.
+ * @param e
+ */
+async function onCellValueChanged(e: CellValueChangedEvent<SubscribeInformation>) {
+  await subscribeService.update(e.data.cpf, {
+    cpf: e.data.cpf,
+    name: e.data.name,
+    lastName: e.data.lastName,
+    birthDate: e.data.birthDate,
+    email: e.data.email,
+    phone: e.data.phone,
+    street: e.data.street,
+    city: e.data.city,
+    state: e.data.state,
+    cep: e.data.cep,
+    number: e.data.number,
+    weight: e.data.weight,
+    height: e.data.height,
+    district: e.data.district,
+    complement: e.data.complement,
+    responsible:  e.data.responsible ? {
+      cpf: e.data.responsible.cpf,
+      name: e.data.responsible.name,
+      lastName: e.data.responsible.lastName,
+      birthDate: e.data.responsible.birthDate
+    } : null
+  })
 }

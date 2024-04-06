@@ -14,7 +14,6 @@ export const DataTable = ({ rowData, columnDefs, height = 500, ...rest }: DataTa
       className={'ag-theme-quartz'}
       rowData={rowData}
       columnDefs={columnDefs}
-      reactiveCustomComponents={true} /*@see https://www.ag-grid.com/react-data-grid/cell-editors/#custom-components*/
       defaultColDef={{
         filter: true,
         editable: true,
