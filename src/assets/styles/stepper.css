@@ -1,0 +1,3 @@
+.chakra-step .chakra-step__indicator[data-status="active"] {
+    background-color: var(--chakra-colors-purple-400);
+}

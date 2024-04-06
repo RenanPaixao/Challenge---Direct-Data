@@ -11,7 +11,6 @@ import {
   StepStatus,
   StepTitle
 } from '@chakra-ui/react'
-
 export interface IStep {
   title: string
   description?: string
@@ -24,12 +23,15 @@ interface IProps extends BoxProps{
 
 export const TheStepper = ({ steps, activeStep, ...rest }: IProps) => {
   return <Box
+    bg={'var(--chakra-colors-purple-500)'}
+    color={'white'}
     border={'thin solid var(--chakra-colors-gray-300)'}
     borderRadius={8}
     p={8}
     {...rest}
   >
     <Stepper
+      colorScheme={'whiteAlpha'}
       size={['md', null, 'lg']}
       index={activeStep}
     >
@@ -47,7 +49,6 @@ export const TheStepper = ({ steps, activeStep, ...rest }: IProps) => {
             <StepTitle>{step.title}</StepTitle>
             <StepDescription>{step.description}</StepDescription>
           </Box>
-
           <StepSeparator />
         </Step>
       ))}
