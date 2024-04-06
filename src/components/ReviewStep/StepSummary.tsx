@@ -18,7 +18,7 @@ export const StepSummary = ({ sectionTitle, sectionContent, nested, ...rest }: I
     <Box p={8} mt={4} border={'thin solid var(--chakra-colors-gray-300)'} borderRadius={8}>
       {
         entries.map(([key, value]) => (
-          <Flex key={key}>
+          <Flex key={`${key}-${value}`}>
             <Text aria-label={`${sectionTitle} - ${key}`}><strong>{key}</strong></Text>: {value}
           </Flex>
         ))
