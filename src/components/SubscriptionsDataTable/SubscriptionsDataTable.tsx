@@ -132,6 +132,7 @@ export const SubscriptionsDataTable = (props: BoxProps) => {
  * @param e
  */
 async function onCellValueChanged(e: CellValueChangedEvent<SubscribeInformation>) {
+  // By some reason, the patch is updating the whole object, not a part of it. So I have to send the whole object.
   await subscribeService.update(e.data.cpf, {
     cpf: e.data.cpf,
     name: e.data.name,
