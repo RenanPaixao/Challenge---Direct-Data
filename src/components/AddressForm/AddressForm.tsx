@@ -2,12 +2,13 @@ import { Button, Center, SimpleGrid, SimpleGridProps } from '@chakra-ui/react'
 import { renderInputsBaseOnConfigs } from '../../utils/forms.tsx'
 import { FormFooterWrapper } from '../FormFooterWrapper/FormFooterWrapper.tsx'
 import { FormikProvider, useFormik } from 'formik'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { StepperContext } from '../../context/StepperContext.tsx'
 import { FieldConfig } from '../AboutYouForm/types'
 import * as Yup from 'yup'
 import { FORM_MESSAGES } from '../../utils/constants.ts'
 import { StudentContext } from '../../context/StudentContext.tsx'
+import { cepService } from '../../services/cepService/cepService.ts'
 
 const { REQUIRED, MAX_LENGTH } = FORM_MESSAGES
 
@@ -84,6 +85,24 @@ export const AddressForm = (props: SimpleGridProps) => {
     },
     validationSchema: schema
   })
+
+  useEffect(() => {
+    const fetchCep = async () => {
+      if(!formik.values.cep) {
+        return
+      }
+
+      const response = await cepService.getCep(formik.values.cep)
+      setAddress({ ...formik.values, ...response })
+
+      await formik.setValues({ ...formik.values, ...response })
+    }
+
+    // Avoiding multiple requests
+    if(formik.values.cep.length === 9) {
+      fetchCep()
+    }
+  }, [formik.values.cep])
 
   return <FormikProvider value={formik}>
     <Center as={'form'} onSubmit={formik.handleSubmit} flexDirection={'column'}>

@@ -23,3 +23,12 @@ interface IdentityInformationModel {
 }
 
 export interface SubscribeInformation extends AboutYouInformation, Address{}
+
+export interface CepInfo{
+  cep: string,
+  logradouro: string,
+  complemento: string,
+  bairro: string,
+  localidade: string,
+  uf: string
+}
