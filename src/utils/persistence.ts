@@ -15,3 +15,11 @@ export function retrieveFromSessionStorage(key: string) {
   const item = sessionStorage.getItem(key)
   return item ? JSON.parse(item) : null
 }
+
+/**
+ * Remove data from session storage.
+ * @param key
+ */
+export function removeFromSessionStorage(key: string) {
+  sessionStorage.removeItem(key)
+}
