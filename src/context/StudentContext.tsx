@@ -9,7 +9,7 @@ export interface StudentContextProps {
   setAboutYouInformation: (aboutYouInformation: AboutYouInformation) => void
   address: Address | null
   setAddress: (address: Address) => void
-  clear: () => void
+  clearStudentContext: () => void
 }
 
 export const StudentContext = createContext<StudentContextProps>({
@@ -17,7 +17,7 @@ export const StudentContext = createContext<StudentContextProps>({
   setAboutYouInformation: () => {},
   address: null,
   setAddress: () => {},
-  clear: () => {}
+  clearStudentContext: () => {}
 })
 
 StudentContext.displayName = 'StudentContext'
@@ -36,7 +36,7 @@ export const StudentProvider = ({ children }: PropsWithChildren) => {
     persistOnSessionStorage(ADDRESS, address)
   }, [aboutYouInformation, address])
 
-  const clear = () => {
+  const clearStudentContext = () => {
     setAboutYouInformation(null)
     setAddress(null)
   }
@@ -46,7 +46,7 @@ export const StudentProvider = ({ children }: PropsWithChildren) => {
     setAboutYouInformation,
     address,
     setAddress,
-    clear
+    clearStudentContext
   }}>
     {children}
   </StudentContext.Provider>

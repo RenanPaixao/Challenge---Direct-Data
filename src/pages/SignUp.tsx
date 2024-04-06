@@ -11,12 +11,12 @@ import { StudentContext } from '../context/StudentContext.tsx'
 
 const { ADDRESS, ABOUT_YOU_INFORMATION } = SESSION_STORAGE_KEYS
 export const SignUp = () => {
-  const { clear } = useContext(StudentContext)
+  const { clearStudentContext } = useContext(StudentContext)
   const { steps, activeStep } = useContext(StepperContext)!
 
   useEffect(() => {
     return () => {
-      clear()
+      clearStudentContext()
       removeFromSessionStorage(ABOUT_YOU_INFORMATION)
       removeFromSessionStorage(ADDRESS)
     }

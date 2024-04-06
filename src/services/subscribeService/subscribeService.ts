@@ -23,7 +23,9 @@ class SubscribeServiceImpl {
   }
 
   async getByCpf(cpf: string) {
-    return this.instance.get(`${this.endpoint}/${cpf}`)
+    const { data } = await this.instance.get(`${this.endpoint}/${cpf}`)
+
+    return data
   }
 
   async create(data: SubscribeInformation) {

@@ -12,7 +12,7 @@ import { formatDate } from '../../utils/date.ts'
 const { ADDRESS, ABOUT_YOU_INFORMATION } = SESSION_STORAGE_KEYS
 export const ReviewStep = () => {
   const { goToPrevious, setActiveStep } = useContext(StepperContext)!
-  const { address, aboutYouInformation } = useContext(StudentContext)
+  const { address, aboutYouInformation, clearStudentContext } = useContext(StudentContext)
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
 
@@ -53,6 +53,7 @@ export const ReviewStep = () => {
 
       sessionStorage.removeItem(ABOUT_YOU_INFORMATION)
       sessionStorage.removeItem(ADDRESS)
+      clearStudentContext()
       setActiveStep(0)
 
       navigate('/success', { replace: true })
