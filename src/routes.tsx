@@ -37,9 +37,7 @@ export default function AppRouter() {
           </DefaultLayout>
         } />
         <Route path="/success" element={
-          <DefaultLayout>
-            <SuccessfulRegister/>
-          </DefaultLayout>
+          <SuccessfulRegister/>
         } />
         <Route path="/all-students" element={
           <DefaultLayout>
