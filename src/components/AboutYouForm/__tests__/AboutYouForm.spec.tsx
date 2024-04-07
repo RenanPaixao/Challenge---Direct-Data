@@ -5,8 +5,10 @@ import {
 } from '../../../../tests/test-utils.tsx'
 import { AboutYouForm } from '../AboutYouForm.tsx'
 import { AboutYouInformation } from '../../../context/types'
+import { cepService } from '../../../services/cepService/cepService.ts'
 
 type FormValues = Record<keyof Omit<AboutYouInformation, 'responsible'>, FormField>
+cepService.getCep = vi.fn().mockReturnValue(Promise.resolve({}))
 
 const formValues: FormValues = {
   name: {
@@ -20,7 +22,7 @@ const formValues: FormValues = {
     name: 'lastName'
   },
   cpf: {
-    value: '123456789',
+    value: '09182085056',
     role: 'textbox',
     name: 'cpf'
   },

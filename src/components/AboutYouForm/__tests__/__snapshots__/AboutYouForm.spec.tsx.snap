@@ -25,7 +25,6 @@ exports[`AboutYouForm > should render 1`] = `
           class="chakra-input css-1cjy4zv"
           id="field-:r0:"
           name="name"
-          type="text"
           value=""
         />
         <div
@@ -50,7 +49,6 @@ exports[`AboutYouForm > should render 1`] = `
           class="chakra-input css-1cjy4zv"
           id="field-:r1:"
           name="lastName"
-          type="text"
           value=""
         />
         <div
@@ -69,16 +67,985 @@ exports[`AboutYouForm > should render 1`] = `
         >
           Data de nascimento
         </label>
-        <input
-          aria-describedby="field-:r2:-helptext"
-          aria-label="birthDate"
-          class="chakra-input css-1cjy4zv"
-          data-testid="birthDate"
-          id="field-:r2:"
-          name="birthDate"
-          type="date"
-          value=""
-        />
+        <div
+          aria-controls="popover-content-:r4:"
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="css-1wucykp"
+          id="popover-trigger-:r4:"
+        >
+          <input
+            aria-describedby="field-:r2:-helptext"
+            aria-readonly="true"
+            class="chakra-input css-18882yg"
+            id="field-:r2:"
+            placeholder="Selecione uma data"
+            readonly=""
+            value=""
+          />
+          <span
+            class="css-ey8ecm"
+          >
+            <svg
+              class="chakra-icon css-onkibi"
+              focusable="false"
+              viewBox="0 0 14 14"
+            >
+              <path
+                d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="chakra-popover__popper css-1qq679y"
+          style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+        >
+          <section
+            aria-describedby="popover-body-:r4:"
+            class="chakra-popover__content css-sjj62m"
+            id="popover-content-:r4:"
+            role="dialog"
+            style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.95) translateZ(0);"
+            tabindex="-1"
+          >
+            <div
+              class="chakra-popover__arrow-positioner css-0"
+              data-popper-arrow=""
+              style="position: absolute;"
+            >
+              <div
+                class="chakra-popover__arrow css-0"
+                data-popper-arrow-inner=""
+              />
+            </div>
+            <button
+              aria-label="Close"
+              class="chakra-popover__close-btn css-1o8qips"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="chakra-icon css-onkibi"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+            <div
+              class="chakra-popover__body css-1ews2c8"
+              id="popover-body-:r4:"
+            >
+              <div
+                class="css-1m8vtoa"
+              >
+                <div
+                  class="chakra-select__wrapper css-gc9pv4"
+                >
+                  <select
+                    aria-describedby="field-:r2:-helptext"
+                    class="chakra-select css-7hgtxp"
+                    id="field-:r2:"
+                  >
+                    <option
+                      value="0"
+                    >
+                      Janeiro
+                    </option>
+                    <option
+                      value="1"
+                    >
+                      Fevereiro
+                    </option>
+                    <option
+                      value="2"
+                    >
+                      Março
+                    </option>
+                    <option
+                      value="3"
+                    >
+                      Abril
+                    </option>
+                    <option
+                      value="4"
+                    >
+                      Maio
+                    </option>
+                    <option
+                      value="5"
+                    >
+                      Junho
+                    </option>
+                    <option
+                      value="6"
+                    >
+                      Julho
+                    </option>
+                    <option
+                      value="7"
+                    >
+                      Agosto
+                    </option>
+                    <option
+                      value="8"
+                    >
+                      Setembro
+                    </option>
+                    <option
+                      value="9"
+                    >
+                      Outubro
+                    </option>
+                    <option
+                      value="10"
+                    >
+                      Novembro
+                    </option>
+                    <option
+                      value="11"
+                    >
+                      Dezembro
+                    </option>
+                  </select>
+                  <div
+                    class="chakra-select__icon-wrapper css-iohxn1"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="chakra-select__icon"
+                      focusable="false"
+                      role="presentation"
+                      style="width: 1em; height: 1em; color: currentColor;"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="chakra-select__wrapper css-gc9pv4"
+                >
+                  <select
+                    aria-describedby="field-:r2:-helptext"
+                    class="chakra-select css-7hgtxp"
+                    id="field-:r2:"
+                  >
+                    <option
+                      value="1924"
+                    >
+                      1924
+                    </option>
+                    <option
+                      value="1925"
+                    >
+                      1925
+                    </option>
+                    <option
+                      value="1926"
+                    >
+                      1926
+                    </option>
+                    <option
+                      value="1927"
+                    >
+                      1927
+                    </option>
+                    <option
+                      value="1928"
+                    >
+                      1928
+                    </option>
+                    <option
+                      value="1929"
+                    >
+                      1929
+                    </option>
+                    <option
+                      value="1930"
+                    >
+                      1930
+                    </option>
+                    <option
+                      value="1931"
+                    >
+                      1931
+                    </option>
+                    <option
+                      value="1932"
+                    >
+                      1932
+                    </option>
+                    <option
+                      value="1933"
+                    >
+                      1933
+                    </option>
+                    <option
+                      value="1934"
+                    >
+                      1934
+                    </option>
+                    <option
+                      value="1935"
+                    >
+                      1935
+                    </option>
+                    <option
+                      value="1936"
+                    >
+                      1936
+                    </option>
+                    <option
+                      value="1937"
+                    >
+                      1937
+                    </option>
+                    <option
+                      value="1938"
+                    >
+                      1938
+                    </option>
+                    <option
+                      value="1939"
+                    >
+                      1939
+                    </option>
+                    <option
+                      value="1940"
+                    >
+                      1940
+                    </option>
+                    <option
+                      value="1941"
+                    >
+                      1941
+                    </option>
+                    <option
+                      value="1942"
+                    >
+                      1942
+                    </option>
+                    <option
+                      value="1943"
+                    >
+                      1943
+                    </option>
+                    <option
+                      value="1944"
+                    >
+                      1944
+                    </option>
+                    <option
+                      value="1945"
+                    >
+                      1945
+                    </option>
+                    <option
+                      value="1946"
+                    >
+                      1946
+                    </option>
+                    <option
+                      value="1947"
+                    >
+                      1947
+                    </option>
+                    <option
+                      value="1948"
+                    >
+                      1948
+                    </option>
+                    <option
+                      value="1949"
+                    >
+                      1949
+                    </option>
+                    <option
+                      value="1950"
+                    >
+                      1950
+                    </option>
+                    <option
+                      value="1951"
+                    >
+                      1951
+                    </option>
+                    <option
+                      value="1952"
+                    >
+                      1952
+                    </option>
+                    <option
+                      value="1953"
+                    >
+                      1953
+                    </option>
+                    <option
+                      value="1954"
+                    >
+                      1954
+                    </option>
+                    <option
+                      value="1955"
+                    >
+                      1955
+                    </option>
+                    <option
+                      value="1956"
+                    >
+                      1956
+                    </option>
+                    <option
+                      value="1957"
+                    >
+                      1957
+                    </option>
+                    <option
+                      value="1958"
+                    >
+                      1958
+                    </option>
+                    <option
+                      value="1959"
+                    >
+                      1959
+                    </option>
+                    <option
+                      value="1960"
+                    >
+                      1960
+                    </option>
+                    <option
+                      value="1961"
+                    >
+                      1961
+                    </option>
+                    <option
+                      value="1962"
+                    >
+                      1962
+                    </option>
+                    <option
+                      value="1963"
+                    >
+                      1963
+                    </option>
+                    <option
+                      value="1964"
+                    >
+                      1964
+                    </option>
+                    <option
+                      value="1965"
+                    >
+                      1965
+                    </option>
+                    <option
+                      value="1966"
+                    >
+                      1966
+                    </option>
+                    <option
+                      value="1967"
+                    >
+                      1967
+                    </option>
+                    <option
+                      value="1968"
+                    >
+                      1968
+                    </option>
+                    <option
+                      value="1969"
+                    >
+                      1969
+                    </option>
+                    <option
+                      value="1970"
+                    >
+                      1970
+                    </option>
+                    <option
+                      value="1971"
+                    >
+                      1971
+                    </option>
+                    <option
+                      value="1972"
+                    >
+                      1972
+                    </option>
+                    <option
+                      value="1973"
+                    >
+                      1973
+                    </option>
+                    <option
+                      value="1974"
+                    >
+                      1974
+                    </option>
+                    <option
+                      value="1975"
+                    >
+                      1975
+                    </option>
+                    <option
+                      value="1976"
+                    >
+                      1976
+                    </option>
+                    <option
+                      value="1977"
+                    >
+                      1977
+                    </option>
+                    <option
+                      value="1978"
+                    >
+                      1978
+                    </option>
+                    <option
+                      value="1979"
+                    >
+                      1979
+                    </option>
+                    <option
+                      value="1980"
+                    >
+                      1980
+                    </option>
+                    <option
+                      value="1981"
+                    >
+                      1981
+                    </option>
+                    <option
+                      value="1982"
+                    >
+                      1982
+                    </option>
+                    <option
+                      value="1983"
+                    >
+                      1983
+                    </option>
+                    <option
+                      value="1984"
+                    >
+                      1984
+                    </option>
+                    <option
+                      value="1985"
+                    >
+                      1985
+                    </option>
+                    <option
+                      value="1986"
+                    >
+                      1986
+                    </option>
+                    <option
+                      value="1987"
+                    >
+                      1987
+                    </option>
+                    <option
+                      value="1988"
+                    >
+                      1988
+                    </option>
+                    <option
+                      value="1989"
+                    >
+                      1989
+                    </option>
+                    <option
+                      value="1990"
+                    >
+                      1990
+                    </option>
+                    <option
+                      value="1991"
+                    >
+                      1991
+                    </option>
+                    <option
+                      value="1992"
+                    >
+                      1992
+                    </option>
+                    <option
+                      value="1993"
+                    >
+                      1993
+                    </option>
+                    <option
+                      value="1994"
+                    >
+                      1994
+                    </option>
+                    <option
+                      value="1995"
+                    >
+                      1995
+                    </option>
+                    <option
+                      value="1996"
+                    >
+                      1996
+                    </option>
+                    <option
+                      value="1997"
+                    >
+                      1997
+                    </option>
+                    <option
+                      value="1998"
+                    >
+                      1998
+                    </option>
+                    <option
+                      value="1999"
+                    >
+                      1999
+                    </option>
+                    <option
+                      value="2000"
+                    >
+                      2000
+                    </option>
+                    <option
+                      value="2001"
+                    >
+                      2001
+                    </option>
+                    <option
+                      value="2002"
+                    >
+                      2002
+                    </option>
+                    <option
+                      value="2003"
+                    >
+                      2003
+                    </option>
+                    <option
+                      value="2004"
+                    >
+                      2004
+                    </option>
+                    <option
+                      value="2005"
+                    >
+                      2005
+                    </option>
+                    <option
+                      value="2006"
+                    >
+                      2006
+                    </option>
+                    <option
+                      value="2007"
+                    >
+                      2007
+                    </option>
+                    <option
+                      value="2008"
+                    >
+                      2008
+                    </option>
+                    <option
+                      value="2009"
+                    >
+                      2009
+                    </option>
+                    <option
+                      value="2010"
+                    >
+                      2010
+                    </option>
+                    <option
+                      value="2011"
+                    >
+                      2011
+                    </option>
+                    <option
+                      value="2012"
+                    >
+                      2012
+                    </option>
+                    <option
+                      value="2013"
+                    >
+                      2013
+                    </option>
+                    <option
+                      value="2014"
+                    >
+                      2014
+                    </option>
+                    <option
+                      value="2015"
+                    >
+                      2015
+                    </option>
+                    <option
+                      value="2016"
+                    >
+                      2016
+                    </option>
+                    <option
+                      value="2017"
+                    >
+                      2017
+                    </option>
+                    <option
+                      value="2018"
+                    >
+                      2018
+                    </option>
+                    <option
+                      value="2019"
+                    >
+                      2019
+                    </option>
+                    <option
+                      value="2020"
+                    >
+                      2020
+                    </option>
+                    <option
+                      value="2021"
+                    >
+                      2021
+                    </option>
+                    <option
+                      value="2022"
+                    >
+                      2022
+                    </option>
+                    <option
+                      value="2023"
+                    >
+                      2023
+                    </option>
+                    <option
+                      value="2024"
+                    >
+                      2024
+                    </option>
+                    <option
+                      value="2025"
+                    >
+                      2025
+                    </option>
+                    <option
+                      value="2026"
+                    >
+                      2026
+                    </option>
+                    <option
+                      value="2027"
+                    >
+                      2027
+                    </option>
+                    <option
+                      value="2028"
+                    >
+                      2028
+                    </option>
+                    <option
+                      value="2029"
+                    >
+                      2029
+                    </option>
+                  </select>
+                  <div
+                    class="chakra-select__icon-wrapper css-iohxn1"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="chakra-select__icon"
+                      focusable="false"
+                      role="presentation"
+                      style="width: 1em; height: 1em; color: currentColor;"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="css-1au56xz"
+                >
+                  <button
+                    aria-label="Go back"
+                    class="chakra-button css-185sdyi"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="chakra-icon css-onkibi"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    aria-label="Go ahead"
+                    class="chakra-button css-185sdyi"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="chakra-icon css-onkibi"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="css-1j3tgd4"
+              >
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Dom
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Seg
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Ter
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Qua
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Qui
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Sex
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Sáb
+                </p>
+              </div>
+              <div
+                class="css-1cgi5b7"
+              >
+                <span
+                  class="css-bu1mwh"
+                />
+                <button
+                  class="css-1celfor"
+                >
+                  1
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  2
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  3
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  4
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  5
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  6
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  7
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  8
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  9
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  10
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  11
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  12
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  13
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  14
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  15
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  16
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  17
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  18
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  19
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  20
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  21
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  22
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  23
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  24
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  25
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  26
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  27
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  28
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  29
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  30
+                </button>
+              </div>
+            </div>
+            <footer
+              class="chakra-popover__footer css-1ntzpg2"
+            >
+              <div
+                class="css-gg4vpm"
+              >
+                <button
+                  class="chakra-button css-65ffj8"
+                  type="button"
+                >
+                  Hoje
+                </button>
+                <button
+                  class="chakra-button css-16ubhn"
+                  type="button"
+                >
+                  Limpar
+                </button>
+              </div>
+            </footer>
+          </section>
+        </div>
         <div
           class="chakra-form__helper-text css-1fjml25"
           id="field-:r2:-helptext"
@@ -91,22 +1058,21 @@ exports[`AboutYouForm > should render 1`] = `
         <label
           class="chakra-form__label css-g6pte"
           for="cpf"
-          id="field-:r3:-label"
+          id="field-:r5:-label"
         >
           CPF
         </label>
         <input
-          aria-describedby="field-:r3:-helptext"
+          aria-describedby="field-:r5:-helptext"
           aria-label="cpf"
           class="chakra-input css-1cjy4zv"
-          id="field-:r3:"
+          id="field-:r5:"
           name="cpf"
-          type="text"
           value=""
         />
         <div
           class="chakra-form__helper-text css-1fjml25"
-          id="field-:r3:-helptext"
+          id="field-:r5:-helptext"
         />
       </div>
       <div
@@ -116,22 +1082,21 @@ exports[`AboutYouForm > should render 1`] = `
         <label
           class="chakra-form__label css-g6pte"
           for="weight"
-          id="field-:r4:-label"
+          id="field-:r6:-label"
         >
           Peso
         </label>
         <input
-          aria-describedby="field-:r4:-helptext"
+          aria-describedby="field-:r6:-helptext"
           aria-label="weight"
           class="chakra-input css-1cjy4zv"
-          id="field-:r4:"
+          id="field-:r6:"
           name="weight"
-          type="text"
           value=""
         />
         <div
           class="chakra-form__helper-text css-1fjml25"
-          id="field-:r4:-helptext"
+          id="field-:r6:-helptext"
         >
           Exemplo: 70,00
         </div>
@@ -143,22 +1108,21 @@ exports[`AboutYouForm > should render 1`] = `
         <label
           class="chakra-form__label css-g6pte"
           for="height"
-          id="field-:r5:-label"
+          id="field-:r7:-label"
         >
           Altura
         </label>
         <input
-          aria-describedby="field-:r5:-helptext"
+          aria-describedby="field-:r7:-helptext"
           aria-label="height"
           class="chakra-input css-1cjy4zv"
-          id="field-:r5:"
+          id="field-:r7:"
           name="height"
-          type="text"
           value=""
         />
         <div
           class="chakra-form__helper-text css-1fjml25"
-          id="field-:r5:-helptext"
+          id="field-:r7:-helptext"
         >
           Exemplo: 1,70
         </div>
@@ -170,22 +1134,21 @@ exports[`AboutYouForm > should render 1`] = `
         <label
           class="chakra-form__label css-g6pte"
           for="email"
-          id="field-:r6:-label"
+          id="field-:r8:-label"
         >
           Email
         </label>
         <input
-          aria-describedby="field-:r6:-helptext"
+          aria-describedby="field-:r8:-helptext"
           aria-label="email"
           class="chakra-input css-1cjy4zv"
-          id="field-:r6:"
+          id="field-:r8:"
           name="email"
-          type="email"
           value=""
         />
         <div
           class="chakra-form__helper-text css-1fjml25"
-          id="field-:r6:-helptext"
+          id="field-:r8:-helptext"
         />
       </div>
       <div
@@ -195,22 +1158,21 @@ exports[`AboutYouForm > should render 1`] = `
         <label
           class="chakra-form__label css-g6pte"
           for="phone"
-          id="field-:r7:-label"
+          id="field-:r9:-label"
         >
           Telefone
         </label>
         <input
-          aria-describedby="field-:r7:-helptext"
+          aria-describedby="field-:r9:-helptext"
           aria-label="phone"
           class="chakra-input css-1cjy4zv"
-          id="field-:r7:"
+          id="field-:r9:"
           name="phone"
-          type="tel"
           value=""
         />
         <div
           class="chakra-form__helper-text css-1fjml25"
-          id="field-:r7:-helptext"
+          id="field-:r9:-helptext"
         />
       </div>
     </div>
@@ -247,69 +1209,17 @@ exports[`AboutYouForm > should render and show responsible fields 1`] = `
         <label
           class="chakra-form__label css-g6pte"
           for="name"
-          id="field-:r8:-label"
+          id="field-:ra:-label"
         >
           Nome
         </label>
         <input
-          aria-describedby="field-:r8:-helptext"
+          aria-describedby="field-:ra:-helptext"
           aria-label="name"
           class="chakra-input css-1cjy4zv"
-          id="field-:r8:"
-          name="name"
-          type="text"
-          value="John"
-        />
-        <div
-          class="chakra-form__helper-text css-1fjml25"
-          id="field-:r8:-helptext"
-        />
-      </div>
-      <div
-        class="chakra-form-control css-6h2d2t"
-        role="group"
-      >
-        <label
-          class="chakra-form__label css-g6pte"
-          for="lastName"
-          id="field-:r9:-label"
-        >
-          Sobrenome
-        </label>
-        <input
-          aria-describedby="field-:r9:-helptext"
-          aria-label="lastName"
-          class="chakra-input css-1cjy4zv"
-          id="field-:r9:"
-          name="lastName"
-          type="text"
-          value="Doe"
-        />
-        <div
-          class="chakra-form__helper-text css-1fjml25"
-          id="field-:r9:-helptext"
-        />
-      </div>
-      <div
-        class="chakra-form-control css-6h2d2t"
-        role="group"
-      >
-        <label
-          class="chakra-form__label css-g6pte"
-          for="birthDate"
-          id="field-:ra:-label"
-        >
-          Data de nascimento
-        </label>
-        <input
-          aria-describedby="field-:ra:-helptext"
-          aria-label="birthDate"
-          class="chakra-input css-1cjy4zv"
-          data-testid="birthDate"
           id="field-:ra:"
-          name="birthDate"
-          type="date"
-          value="2015-12-12"
+          name="name"
+          value="John"
         />
         <div
           class="chakra-form__helper-text css-1fjml25"
@@ -322,19 +1232,18 @@ exports[`AboutYouForm > should render and show responsible fields 1`] = `
       >
         <label
           class="chakra-form__label css-g6pte"
-          for="cpf"
+          for="lastName"
           id="field-:rb:-label"
         >
-          CPF
+          Sobrenome
         </label>
         <input
           aria-describedby="field-:rb:-helptext"
-          aria-label="cpf"
+          aria-label="lastName"
           class="chakra-input css-1cjy4zv"
           id="field-:rb:"
-          name="cpf"
-          type="text"
-          value=""
+          name="lastName"
+          value="Doe"
         />
         <div
           class="chakra-form__helper-text css-1fjml25"
@@ -347,25 +1256,993 @@ exports[`AboutYouForm > should render and show responsible fields 1`] = `
       >
         <label
           class="chakra-form__label css-g6pte"
-          for="weight"
+          for="birthDate"
           id="field-:rc:-label"
         >
-          Peso
+          Data de nascimento
         </label>
-        <input
-          aria-describedby="field-:rc:-helptext"
-          aria-label="weight"
-          class="chakra-input css-1cjy4zv"
-          id="field-:rc:"
-          name="weight"
-          type="text"
-          value=""
-        />
         <div
-          class="chakra-form__helper-text css-1fjml25"
-          id="field-:rc:-helptext"
+          aria-controls="popover-content-:re:"
+          aria-expanded="true"
+          aria-haspopup="dialog"
+          class="css-1wucykp"
+          id="popover-trigger-:re:"
         >
-          Exemplo: 70,00
+          <input
+            aria-describedby="field-:rc:-helptext"
+            aria-readonly="true"
+            class="chakra-input css-18882yg"
+            id="field-:rc:"
+            placeholder="Selecione uma data"
+            readonly=""
+            value=""
+          />
+          <span
+            class="css-ey8ecm"
+          >
+            <svg
+              class="chakra-icon css-onkibi"
+              focusable="false"
+              viewBox="0 0 14 14"
+            >
+              <path
+                d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="chakra-popover__popper css-1qq679y"
+          data-popper-escaped=""
+          data-popper-placement="bottom"
+          data-popper-reference-hidden=""
+          style="visibility: visible; min-width: max-content; inset: 0 auto auto 0; --popper-transform-origin: top center; position: absolute; left: 0px; top: 0px; margin: 0px; transform: translate(0px, 8px);"
+        >
+          <section
+            aria-describedby="popover-body-:re:"
+            class="chakra-popover__content css-sjj62m"
+            id="popover-content-:re:"
+            role="dialog"
+            style="transform-origin: var(--popper-transform-origin); opacity: 1; visibility: visible; transform: none;"
+            tabindex="-1"
+          >
+            <div
+              class="chakra-popover__arrow-positioner css-0"
+              data-popper-arrow=""
+              style="z-index: -1; --popper-arrow-size-half: calc(var(--popper-arrow-size, 8px) / 2 - 1px); --popper-arrow-offset: calc(var(--popper-arrow-size-half) * -1); position: absolute; left: 0px; transform: translate(8px, 0px);"
+            >
+              <div
+                class="chakra-popover__arrow css-0"
+                data-popper-arrow-inner=""
+                style="--popper-arrow-default-shadow: -1px -1px 0px 0 var(--popper-arrow-shadow-color); transform: rotate(45deg); top: 0px; left: 0px; width: 100%; height: 100%; position: absolute; z-index: inherit; box-shadow: var(--popper-arrow-shadow, var(--popper-arrow-default-shadow));"
+              />
+            </div>
+            <button
+              aria-label="Close"
+              class="chakra-popover__close-btn css-1o8qips"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="chakra-icon css-onkibi"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+            <div
+              class="chakra-popover__body css-1ews2c8"
+              id="popover-body-:re:"
+            >
+              <div
+                class="css-1m8vtoa"
+              >
+                <div
+                  class="chakra-select__wrapper css-gc9pv4"
+                >
+                  <select
+                    aria-describedby="field-:rc:-helptext"
+                    class="chakra-select css-7hgtxp"
+                    id="field-:rc:"
+                  >
+                    <option
+                      value="0"
+                    >
+                      Janeiro
+                    </option>
+                    <option
+                      value="1"
+                    >
+                      Fevereiro
+                    </option>
+                    <option
+                      value="2"
+                    >
+                      Março
+                    </option>
+                    <option
+                      value="3"
+                    >
+                      Abril
+                    </option>
+                    <option
+                      value="4"
+                    >
+                      Maio
+                    </option>
+                    <option
+                      value="5"
+                    >
+                      Junho
+                    </option>
+                    <option
+                      value="6"
+                    >
+                      Julho
+                    </option>
+                    <option
+                      value="7"
+                    >
+                      Agosto
+                    </option>
+                    <option
+                      value="8"
+                    >
+                      Setembro
+                    </option>
+                    <option
+                      value="9"
+                    >
+                      Outubro
+                    </option>
+                    <option
+                      value="10"
+                    >
+                      Novembro
+                    </option>
+                    <option
+                      value="11"
+                    >
+                      Dezembro
+                    </option>
+                  </select>
+                  <div
+                    class="chakra-select__icon-wrapper css-iohxn1"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="chakra-select__icon"
+                      focusable="false"
+                      role="presentation"
+                      style="width: 1em; height: 1em; color: currentColor;"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="chakra-select__wrapper css-gc9pv4"
+                >
+                  <select
+                    aria-describedby="field-:rc:-helptext"
+                    class="chakra-select css-7hgtxp"
+                    id="field-:rc:"
+                  >
+                    <option
+                      value="1924"
+                    >
+                      1924
+                    </option>
+                    <option
+                      value="1925"
+                    >
+                      1925
+                    </option>
+                    <option
+                      value="1926"
+                    >
+                      1926
+                    </option>
+                    <option
+                      value="1927"
+                    >
+                      1927
+                    </option>
+                    <option
+                      value="1928"
+                    >
+                      1928
+                    </option>
+                    <option
+                      value="1929"
+                    >
+                      1929
+                    </option>
+                    <option
+                      value="1930"
+                    >
+                      1930
+                    </option>
+                    <option
+                      value="1931"
+                    >
+                      1931
+                    </option>
+                    <option
+                      value="1932"
+                    >
+                      1932
+                    </option>
+                    <option
+                      value="1933"
+                    >
+                      1933
+                    </option>
+                    <option
+                      value="1934"
+                    >
+                      1934
+                    </option>
+                    <option
+                      value="1935"
+                    >
+                      1935
+                    </option>
+                    <option
+                      value="1936"
+                    >
+                      1936
+                    </option>
+                    <option
+                      value="1937"
+                    >
+                      1937
+                    </option>
+                    <option
+                      value="1938"
+                    >
+                      1938
+                    </option>
+                    <option
+                      value="1939"
+                    >
+                      1939
+                    </option>
+                    <option
+                      value="1940"
+                    >
+                      1940
+                    </option>
+                    <option
+                      value="1941"
+                    >
+                      1941
+                    </option>
+                    <option
+                      value="1942"
+                    >
+                      1942
+                    </option>
+                    <option
+                      value="1943"
+                    >
+                      1943
+                    </option>
+                    <option
+                      value="1944"
+                    >
+                      1944
+                    </option>
+                    <option
+                      value="1945"
+                    >
+                      1945
+                    </option>
+                    <option
+                      value="1946"
+                    >
+                      1946
+                    </option>
+                    <option
+                      value="1947"
+                    >
+                      1947
+                    </option>
+                    <option
+                      value="1948"
+                    >
+                      1948
+                    </option>
+                    <option
+                      value="1949"
+                    >
+                      1949
+                    </option>
+                    <option
+                      value="1950"
+                    >
+                      1950
+                    </option>
+                    <option
+                      value="1951"
+                    >
+                      1951
+                    </option>
+                    <option
+                      value="1952"
+                    >
+                      1952
+                    </option>
+                    <option
+                      value="1953"
+                    >
+                      1953
+                    </option>
+                    <option
+                      value="1954"
+                    >
+                      1954
+                    </option>
+                    <option
+                      value="1955"
+                    >
+                      1955
+                    </option>
+                    <option
+                      value="1956"
+                    >
+                      1956
+                    </option>
+                    <option
+                      value="1957"
+                    >
+                      1957
+                    </option>
+                    <option
+                      value="1958"
+                    >
+                      1958
+                    </option>
+                    <option
+                      value="1959"
+                    >
+                      1959
+                    </option>
+                    <option
+                      value="1960"
+                    >
+                      1960
+                    </option>
+                    <option
+                      value="1961"
+                    >
+                      1961
+                    </option>
+                    <option
+                      value="1962"
+                    >
+                      1962
+                    </option>
+                    <option
+                      value="1963"
+                    >
+                      1963
+                    </option>
+                    <option
+                      value="1964"
+                    >
+                      1964
+                    </option>
+                    <option
+                      value="1965"
+                    >
+                      1965
+                    </option>
+                    <option
+                      value="1966"
+                    >
+                      1966
+                    </option>
+                    <option
+                      value="1967"
+                    >
+                      1967
+                    </option>
+                    <option
+                      value="1968"
+                    >
+                      1968
+                    </option>
+                    <option
+                      value="1969"
+                    >
+                      1969
+                    </option>
+                    <option
+                      value="1970"
+                    >
+                      1970
+                    </option>
+                    <option
+                      value="1971"
+                    >
+                      1971
+                    </option>
+                    <option
+                      value="1972"
+                    >
+                      1972
+                    </option>
+                    <option
+                      value="1973"
+                    >
+                      1973
+                    </option>
+                    <option
+                      value="1974"
+                    >
+                      1974
+                    </option>
+                    <option
+                      value="1975"
+                    >
+                      1975
+                    </option>
+                    <option
+                      value="1976"
+                    >
+                      1976
+                    </option>
+                    <option
+                      value="1977"
+                    >
+                      1977
+                    </option>
+                    <option
+                      value="1978"
+                    >
+                      1978
+                    </option>
+                    <option
+                      value="1979"
+                    >
+                      1979
+                    </option>
+                    <option
+                      value="1980"
+                    >
+                      1980
+                    </option>
+                    <option
+                      value="1981"
+                    >
+                      1981
+                    </option>
+                    <option
+                      value="1982"
+                    >
+                      1982
+                    </option>
+                    <option
+                      value="1983"
+                    >
+                      1983
+                    </option>
+                    <option
+                      value="1984"
+                    >
+                      1984
+                    </option>
+                    <option
+                      value="1985"
+                    >
+                      1985
+                    </option>
+                    <option
+                      value="1986"
+                    >
+                      1986
+                    </option>
+                    <option
+                      value="1987"
+                    >
+                      1987
+                    </option>
+                    <option
+                      value="1988"
+                    >
+                      1988
+                    </option>
+                    <option
+                      value="1989"
+                    >
+                      1989
+                    </option>
+                    <option
+                      value="1990"
+                    >
+                      1990
+                    </option>
+                    <option
+                      value="1991"
+                    >
+                      1991
+                    </option>
+                    <option
+                      value="1992"
+                    >
+                      1992
+                    </option>
+                    <option
+                      value="1993"
+                    >
+                      1993
+                    </option>
+                    <option
+                      value="1994"
+                    >
+                      1994
+                    </option>
+                    <option
+                      value="1995"
+                    >
+                      1995
+                    </option>
+                    <option
+                      value="1996"
+                    >
+                      1996
+                    </option>
+                    <option
+                      value="1997"
+                    >
+                      1997
+                    </option>
+                    <option
+                      value="1998"
+                    >
+                      1998
+                    </option>
+                    <option
+                      value="1999"
+                    >
+                      1999
+                    </option>
+                    <option
+                      value="2000"
+                    >
+                      2000
+                    </option>
+                    <option
+                      value="2001"
+                    >
+                      2001
+                    </option>
+                    <option
+                      value="2002"
+                    >
+                      2002
+                    </option>
+                    <option
+                      value="2003"
+                    >
+                      2003
+                    </option>
+                    <option
+                      value="2004"
+                    >
+                      2004
+                    </option>
+                    <option
+                      value="2005"
+                    >
+                      2005
+                    </option>
+                    <option
+                      value="2006"
+                    >
+                      2006
+                    </option>
+                    <option
+                      value="2007"
+                    >
+                      2007
+                    </option>
+                    <option
+                      value="2008"
+                    >
+                      2008
+                    </option>
+                    <option
+                      value="2009"
+                    >
+                      2009
+                    </option>
+                    <option
+                      value="2010"
+                    >
+                      2010
+                    </option>
+                    <option
+                      value="2011"
+                    >
+                      2011
+                    </option>
+                    <option
+                      value="2012"
+                    >
+                      2012
+                    </option>
+                    <option
+                      value="2013"
+                    >
+                      2013
+                    </option>
+                    <option
+                      value="2014"
+                    >
+                      2014
+                    </option>
+                    <option
+                      value="2015"
+                    >
+                      2015
+                    </option>
+                    <option
+                      value="2016"
+                    >
+                      2016
+                    </option>
+                    <option
+                      value="2017"
+                    >
+                      2017
+                    </option>
+                    <option
+                      value="2018"
+                    >
+                      2018
+                    </option>
+                    <option
+                      value="2019"
+                    >
+                      2019
+                    </option>
+                    <option
+                      value="2020"
+                    >
+                      2020
+                    </option>
+                    <option
+                      value="2021"
+                    >
+                      2021
+                    </option>
+                    <option
+                      value="2022"
+                    >
+                      2022
+                    </option>
+                    <option
+                      value="2023"
+                    >
+                      2023
+                    </option>
+                    <option
+                      value="2024"
+                    >
+                      2024
+                    </option>
+                    <option
+                      value="2025"
+                    >
+                      2025
+                    </option>
+                    <option
+                      value="2026"
+                    >
+                      2026
+                    </option>
+                    <option
+                      value="2027"
+                    >
+                      2027
+                    </option>
+                    <option
+                      value="2028"
+                    >
+                      2028
+                    </option>
+                    <option
+                      value="2029"
+                    >
+                      2029
+                    </option>
+                  </select>
+                  <div
+                    class="chakra-select__icon-wrapper css-iohxn1"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="chakra-select__icon"
+                      focusable="false"
+                      role="presentation"
+                      style="width: 1em; height: 1em; color: currentColor;"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="css-1au56xz"
+                >
+                  <button
+                    aria-label="Go back"
+                    class="chakra-button css-185sdyi"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="chakra-icon css-onkibi"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    aria-label="Go ahead"
+                    class="chakra-button css-185sdyi"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="chakra-icon css-onkibi"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="css-1j3tgd4"
+              >
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Dom
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Seg
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Ter
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Qua
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Qui
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Sex
+                </p>
+                <p
+                  class="chakra-text css-1qxtz39"
+                >
+                  Sáb
+                </p>
+              </div>
+              <div
+                class="css-1cgi5b7"
+              >
+                <span
+                  class="css-bu1mwh"
+                />
+                <button
+                  class="css-1celfor"
+                >
+                  1
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  2
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  3
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  4
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  5
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  6
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  7
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  8
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  9
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  10
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  11
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  12
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  13
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  14
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  15
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  16
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  17
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  18
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  19
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  20
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  21
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  22
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  23
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  24
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  25
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  26
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  27
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  28
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  29
+                </button>
+                <button
+                  class="css-1celfor"
+                >
+                  30
+                </button>
+              </div>
+            </div>
+            <footer
+              class="chakra-popover__footer css-1ntzpg2"
+            >
+              <div
+                class="css-gg4vpm"
+              >
+                <button
+                  class="chakra-button css-65ffj8"
+                  type="button"
+                >
+                  Hoje
+                </button>
+                <button
+                  class="chakra-button css-16ubhn"
+                  type="button"
+                >
+                  Limpar
+                </button>
+              </div>
+            </footer>
+          </section>
         </div>
       </div>
       <div
@@ -374,72 +2251,17 @@ exports[`AboutYouForm > should render and show responsible fields 1`] = `
       >
         <label
           class="chakra-form__label css-g6pte"
-          for="height"
-          id="field-:rd:-label"
-        >
-          Altura
-        </label>
-        <input
-          aria-describedby="field-:rd:-helptext"
-          aria-label="height"
-          class="chakra-input css-1cjy4zv"
-          id="field-:rd:"
-          name="height"
-          type="text"
-          value=""
-        />
-        <div
-          class="chakra-form__helper-text css-1fjml25"
-          id="field-:rd:-helptext"
-        >
-          Exemplo: 1,70
-        </div>
-      </div>
-      <div
-        class="chakra-form-control css-6h2d2t"
-        role="group"
-      >
-        <label
-          class="chakra-form__label css-g6pte"
-          for="email"
-          id="field-:re:-label"
-        >
-          Email
-        </label>
-        <input
-          aria-describedby="field-:re:-helptext"
-          aria-label="email"
-          class="chakra-input css-1cjy4zv"
-          id="field-:re:"
-          name="email"
-          type="email"
-          value="a@a.com"
-        />
-        <div
-          class="chakra-form__helper-text css-1fjml25"
-          id="field-:re:-helptext"
-        />
-      </div>
-      <div
-        class="chakra-form-control css-6h2d2t"
-        data-focus=""
-        role="group"
-      >
-        <label
-          class="chakra-form__label css-g6pte"
-          data-focus=""
-          for="phone"
+          for="cpf"
           id="field-:rf:-label"
         >
-          Telefone
+          CPF
         </label>
         <input
           aria-describedby="field-:rf:-helptext"
-          aria-label="phone"
+          aria-label="cpf"
           class="chakra-input css-1cjy4zv"
           id="field-:rf:"
-          name="phone"
-          type="tel"
+          name="cpf"
           value=""
         />
         <div
@@ -453,19 +2275,25 @@ exports[`AboutYouForm > should render and show responsible fields 1`] = `
       >
         <label
           class="chakra-form__label css-g6pte"
-          for="responsibleName"
+          for="weight"
           id="field-:rg:-label"
         >
-          Nome do Responsável
+          Peso
         </label>
         <input
-          aria-label="responsibleName"
+          aria-describedby="field-:rg:-helptext"
+          aria-label="weight"
           class="chakra-input css-1cjy4zv"
           id="field-:rg:"
-          name="responsibleName"
-          type="text"
+          name="weight"
           value=""
         />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:rg:-helptext"
+        >
+          Exemplo: 70,00
+        </div>
       </div>
       <div
         class="chakra-form-control css-6h2d2t"
@@ -473,19 +2301,25 @@ exports[`AboutYouForm > should render and show responsible fields 1`] = `
       >
         <label
           class="chakra-form__label css-g6pte"
-          for="responsibleLastName"
+          for="height"
           id="field-:rh:-label"
         >
-          Sobrenome do Responsável
+          Altura
         </label>
         <input
-          aria-label="responsibleLastName"
+          aria-describedby="field-:rh:-helptext"
+          aria-label="height"
           class="chakra-input css-1cjy4zv"
           id="field-:rh:"
-          name="responsibleLastName"
-          type="text"
+          name="height"
           value=""
         />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:rh:-helptext"
+        >
+          Exemplo: 1,70
+        </div>
       </div>
       <div
         class="chakra-form-control css-6h2d2t"
@@ -493,39 +2327,48 @@ exports[`AboutYouForm > should render and show responsible fields 1`] = `
       >
         <label
           class="chakra-form__label css-g6pte"
-          for="responsibleBirthDate"
+          for="email"
           id="field-:ri:-label"
         >
-          Data de nascimento do Responsável
+          Email
         </label>
         <input
-          aria-label="responsibleBirthDate"
+          aria-describedby="field-:ri:-helptext"
+          aria-label="email"
           class="chakra-input css-1cjy4zv"
-          data-testid="responsibleBirthDate"
           id="field-:ri:"
-          name="responsibleBirthDate"
-          type="date"
-          value=""
+          name="email"
+          value="a@a.com"
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:ri:-helptext"
         />
       </div>
       <div
         class="chakra-form-control css-6h2d2t"
+        data-focus=""
         role="group"
       >
         <label
           class="chakra-form__label css-g6pte"
-          for="responsibleCpf"
+          data-focus=""
+          for="phone"
           id="field-:rj:-label"
         >
-          CPF do Responsável
+          Telefone
         </label>
         <input
-          aria-label="responsibleCpf"
+          aria-describedby="field-:rj:-helptext"
+          aria-label="phone"
           class="chakra-input css-1cjy4zv"
           id="field-:rj:"
-          name="responsibleCpf"
-          type="text"
+          name="phone"
           value=""
+        />
+        <div
+          class="chakra-form__helper-text css-1fjml25"
+          id="field-:rj:-helptext"
         />
       </div>
     </div>

@@ -71,7 +71,8 @@ function renderWithStudentContext(ui: ReactElement, contextValues?: Partial<Stud
         number: '',
         ...contextValues?.address
       },
-      setAddress: contextValues?.setAddress || (() => {})
+      setAddress: contextValues?.setAddress || (() => {}),
+      clearStudentContext: contextValues?.clearStudentContext || (() => {})
     }}>
       <StepperProvider
         steps={steps}
@@ -97,10 +98,10 @@ function renderWithStudentContext(ui: ReactElement, contextValues?: Partial<Stud
  * @param formValues
  */
 async function fillForm<T extends Record<string, unknown>>(formValues: Partial<T>) {
-  const { getByRole, getByTestId } = screen
+  const { getByRole, getByPlaceholderText } = screen
 
   for (const { name, role, value } of Object.values(formValues)) {
-    const input = role === 'Date' ? getByTestId(name) : getByRole(role, { name: new RegExp(`\\b${name}\\b`) })
+    const input = role === 'Date' ? getByPlaceholderText('Selecione uma data') : getByRole(role, { name: new RegExp(`\\b${name}\\b`) })
     await user.type(input, value)
   }
 }

@@ -44,10 +44,7 @@ const fieldsConfig: FieldConfig[]  = [
   {
     name: 'birthDate',
     type: 'date',
-    label: 'Data de nascimento',
-    get 'data-testid'() {
-      return this.name
-    }
+    label: 'Data de nascimento'
   },
   {
     name: 'cpf',
@@ -96,10 +93,7 @@ const responsibleFieldsConfig: FieldConfig[] = [
   {
     name: 'responsibleBirthDate',
     label: 'Data de nascimento do Responsável',
-    type: 'date',
-    get 'data-testid'() {
-      return this.name
-    }
+    type: 'date'
   },
   {
     name: 'responsibleCpf',

@@ -25,7 +25,6 @@ exports[`AddressForm > should render 1`] = `
           class="chakra-input css-1cjy4zv"
           id="field-:r0:"
           name="cep"
-          type="text"
           value=""
         />
         <div
@@ -50,7 +49,6 @@ exports[`AddressForm > should render 1`] = `
           class="chakra-input css-1cjy4zv"
           id="field-:r1:"
           name="street"
-          type="text"
           value=""
         />
         <div
@@ -75,7 +73,6 @@ exports[`AddressForm > should render 1`] = `
           class="chakra-input css-1cjy4zv"
           id="field-:r2:"
           name="district"
-          type="text"
           value=""
         />
         <div
@@ -100,7 +97,6 @@ exports[`AddressForm > should render 1`] = `
           class="chakra-input css-1cjy4zv"
           id="field-:r3:"
           name="number"
-          type="text"
           value=""
         />
         <div
@@ -125,7 +121,6 @@ exports[`AddressForm > should render 1`] = `
           class="chakra-input css-1cjy4zv"
           id="field-:r4:"
           name="city"
-          type="text"
           value=""
         />
         <div
@@ -150,7 +145,6 @@ exports[`AddressForm > should render 1`] = `
           class="chakra-input css-1cjy4zv"
           id="field-:r5:"
           name="state"
-          type="text"
           value=""
         />
         <div
@@ -175,7 +169,6 @@ exports[`AddressForm > should render 1`] = `
           class="chakra-input css-1cjy4zv"
           id="field-:r6:"
           name="complement"
-          type="text"
           value=""
         />
         <div
