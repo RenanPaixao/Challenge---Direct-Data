@@ -10,7 +10,7 @@ type ChakraAndFormikInputProps = InputProps & Omit<FieldInputProps<never>, 'valu
 export const DatePicker = (props: ChakraAndFormikInputProps) => {
   const { name, ...rest } = props
   const [,, helpers] = useField(name)
-  const [date, setDate] = useState<string>('')
+  const [date, setDate] = useState<string>(props.value as string ?? '')
 
   useEffect(() => {
     (async () => {
