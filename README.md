@@ -1,49 +1,114 @@
-# Remake
+# Challenge - Direct Data
 
 ---
 
-## Description
+## Descrição
 
-This project is a website that allows users to find recyclers in their area and take a shorter route to them.<br/>
-As a recycler, you can register your business and be found by users. Simple and easy to use.
+O projeto consiste em uma aplicação web simulando um formulário de cadastro de usuários em aulas de boxe, adicionando 
+numa api passada previamente e consumindo os dados para exibição em uma tabela. 
 ---
 
-## Technologies
+## Como foi pensado?
+
+Pensei em dividir a aplicação em 3 partes principais:
+
+1. Formulário de cadastro
+2. Visualização dos dados
+3. Ajustes gerais que não eram bloqueantes para o produto final, mas que deviam ser feitos, como preenchimento 
+campos usando o cep
+
+Com isso em mente, criei um mockup de baixíssima fidelidade, para não gastar muito tempo com o design e focar na 
+implementação. O design serviria muito mais como um guia de onde iria cada coisa.
+
+Link para o mockup: [Figma](https://www.figma.com/file/6jL5rUb9TKgmX18qP7596A/Direct-Data---Challenge)
+
+### Formulário de cadastro
+
+O formulário foi feito pensando numa melhor usabilidade, dividindo em 3 partes e usando etapas (Sobre você, Endereço e 
+Revisão). Durante o fluxo, os dados são salvos na session storage, dando possibilidade de atualizar a página ou voltar para a etapa anterior sem 
+perder os dados.
+
+Os dados só são enviados para a api no final do fluxo, na etapa de revisão, onde o usuário pode rever os dados e confirmar.
+
+Todos os campos tem validação de com o Yup, e o formulário só pode ser enviado se todos os campos passarem.
+
+- Validações adicionadas:
+    - CEP (formato)
+    - CPF (formato e validação se o cpf é válido)
+    - Telefone (formato)
+    - Email (formato)
+    - Todos os campos tem um tamanho máximo de caracteres.
+
+O cep tem uma integração com a api do ViaCEP, que preenche os campos de endereço automaticamente.
+
+### Visualização dos dados
+
+A tabela está na rota `/all-students` e é carregada ao entrar na página.
+
+Na tabela, temos a possibilidade de buscar os valores de cada coluna, ordenar de forma crescente ou decrescente 
+ao clicar no header, e editar os dados de cada célula clicando diretamente em cada.
+
+Demo:
+
+### Ajustes gerais
+
+Algumas coisas considerei como não bloqueantes, mas que deviam ser feitas caso eu conseguisse avançar bem sem travamentos:
+
+- Integração com a api do ViaCEP para preencher os campos de endereço automaticamente.
+- Estilização personalizada do componente de etapas
+- A Home page (tive dificuldade com o design)
+- Formato da data nos campos de data de nascimento (o default do chakra era em mm/dd/yyyy e eles não possuem um datepicker)
+
+Apesar de serem consideradas como não bloqueantes, todas elas foram concluídas. Sem elas, a UX da aplicação seria bem prejudicada.
+
+### Testes
+
+Unitários:
+
+- Criei testes unitários usando vitest e testing library (muito boa para testar a acessibilidade dos componentes), 
+para os componentes mais importantes da aplicação, como o formulário e a tabela.
+
+End to end:
+- Já para os testes end to end, usei o cypress e também a testing library, para testar os principais fluxos da 
+aplicação, como o cadastro com um responsável e o cadastro sem um responsável.
+
+## Tecnologias
 
 - React with Typescript
 - Chakra UI
-- Supabase 
 - Axios
 - Cypress
 - Vitest 
-- Testing Library 
-- I18n for translations
+- Testing Library
 - Formik with Yup for form handling
+- AgReactTable 
 
 ---
 
-## How to run
+## Como rodar
 
-1. Clone this repository
-2. Install dependencies
+1. Clone o repositório
+2. Instale as dependências
 
 ```bash
 yarn
 ```
 
-3. Run the project
+3. Crie o arquivo .env copiando o conteúdo do arquivo .env.example e substitua as variáveis de ambiente
+
+4. Rode o projeto
 
 ```bash
 yarn dev
 ```
 
-and open the browser at the url on the terminal.
+e abra o navegador na url mostrada no terminal.
 
 ---
 
-## How to test
+## Como rodar os testes
 
-### Unit and integration
+### Unitários
 ```bash
 yarn vitest
 ```
@@ -54,22 +119,5 @@ yarn vitest
 yarn cypress run
 ```
 ---
-
-## Demo
-
-https://github.com/RenanPaixao/remake-web/assets/57810270/fee58a12-c265-4920-a3af-6b150bebada2
-
-<br/>
-
-- Unit tests
-
-![remake-web-unit-tests](https://github.com/RenanPaixao/remake-web/assets/57810270/0b177382-def2-4473-8d3b-4bb64e781113)
-
-<br/>
-
-- e2e tests
-  
-![remake-web-e2e-tests](https://github.com/RenanPaixao/remake-web/assets/57810270/e5a0c74b-f1cf-4b60-b8b1-952242bb1e0a)
-
 
 
