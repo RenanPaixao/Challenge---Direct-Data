@@ -19,18 +19,17 @@ export const ReviewStep = () => {
   const { responsible, ...aboutYouWithoutResponsible } = aboutYouInformation!
 
   const aboutYouWithFormattedDate = formatBirthDate(aboutYouWithoutResponsible)
-  const responsibleWithFormattedDate = formatBirthDate(responsible ?? {})
+
+  const responsibleSection = responsible ? [{
+    sectionTitle: 'Responsável',
+    sectionContent: mapObjectKeysToPortuguese(formatBirthDate(responsible ?? {}))
+  }] : undefined
 
   const sectionSteps = [
     {
       sectionTitle: 'Sobre Você',
       sectionContent: mapObjectKeysToPortuguese(aboutYouWithFormattedDate),
-      nested: [
-        {
-          sectionTitle: 'Responsável',
-          sectionContent: mapObjectKeysToPortuguese(responsibleWithFormattedDate)
-        }
-      ]
+      nested: responsibleSection
     },
     {
       sectionTitle: 'Endereço',
