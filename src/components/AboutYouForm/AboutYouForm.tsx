@@ -12,6 +12,14 @@ import { renderInputsBaseOnConfigs, testCPFFormat, checkCPFIsAlreadyRegistered }
 
 const { REQUIRED, INVALID_EMAIL, MAX_LENGTH } = FORM_MESSAGES
 
+const yupRequiredByBirthdateBuilder = {
+  is: (value: string) => {
+    return isGreaterThan18(value)
+  },
+  then: (schema: Yup.StringSchema<any>) => schema,
+  otherwise: (schema: Yup.StringSchema<any>) => schema.required(REQUIRED).test(testCPFFormat)
+}
+
 const schema = Yup.object({
   name: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
   lastName: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
@@ -21,10 +29,10 @@ const schema = Yup.object({
   height: Yup.string().required(REQUIRED),
   email: Yup.string().required(REQUIRED).email(INVALID_EMAIL),
   phone: Yup.string().required(REQUIRED),
-  responsibleName: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
-  responsibleLastName: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
-  responsibleBirthDate: Yup.string().required(REQUIRED),
-  responsibleCpf: Yup.string().required(REQUIRED).test(testCPFFormat)
+  responsibleName: Yup.string().max(50, MAX_LENGTH(50)).when('birthDate', yupRequiredByBirthdateBuilder),
+  responsibleLastName: Yup.string().max(50, MAX_LENGTH(50)).when('birthDate', yupRequiredByBirthdateBuilder),
+  responsibleBirthDate: Yup.string().when('birthDate', yupRequiredByBirthdateBuilder),
+  responsibleCpf: Yup.string().when('birthDate', yupRequiredByBirthdateBuilder)
 })
 
 export type AboutYouValues = Yup.InferType<typeof schema>
@@ -140,10 +148,10 @@ export const AboutYouForm = (props: SimpleGridProps) => {
       }
 
       const responsible = areOver18 ? null : {
-        name: responsibleName,
-        lastName: responsibleLastName,
-        birthDate: responsibleBirthDate,
-        cpf: responsibleCpf
+        name: responsibleName ?? '',
+        lastName: responsibleLastName?? '',
+        birthDate: responsibleBirthDate ?? '',
+        cpf: responsibleCpf ?? ''
       }
 
       setAboutYouInformation({
@@ -164,8 +172,7 @@ export const AboutYouForm = (props: SimpleGridProps) => {
       return
     }
 
-    const age = DateTime.now().diff(DateTime.fromISO(formik.values.birthDate), 'years').years
-    setAreOver18(age > 18)
+    setAreOver18(isGreaterThan18(formik.values.birthDate))
   }, [formik.values.birthDate])
 
   return <FormikProvider value={formik}>
@@ -184,5 +191,13 @@ export const AboutYouForm = (props: SimpleGridProps) => {
       </FormFooterWrapper>
     </Center>
   </FormikProvider>
+}
+
+/**
+ * Check if the birthDate is greater than 18 years.
+ * @param birthDate
+ */
+function isGreaterThan18(birthDate: string) {
+  return DateTime.now().diff(DateTime.fromISO(birthDate), 'years').years > 18
 }
 
