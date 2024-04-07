@@ -75,6 +75,10 @@ End to end:
 - Já para os testes end to end, usei o cypress e também a testing library, para testar os principais fluxos da 
 aplicação, como o cadastro com um responsável e o cadastro sem um responsável.
 
+---
+
+Além disso, todas as imagens adicionadas tinham o formato **webp** ou **svg**, para melhor carregamento.
+
 ## Tecnologias
 
 - React with Typescript
