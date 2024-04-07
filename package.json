@@ -48,6 +48,7 @@
     "luxon": "^3.4.4",
     "react-icons": "^5.0.1",
     "react-imask": "^7.5.0",
+    "simple-chakra-ui-datepicker": "^1.0.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vitest": "^1.2.1"

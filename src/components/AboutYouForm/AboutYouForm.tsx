@@ -5,20 +5,13 @@ import * as Yup from 'yup'
 import { FORM_MESSAGES } from '../../utils/constants.ts'
 import { StudentContext } from '../../context/StudentContext.tsx'
 import { FieldConfig } from './types'
-import { DateTime } from 'luxon'
 import { StepperContext } from '../../context/StepperContext.tsx'
 import { FormFooterWrapper } from '../FormFooterWrapper/FormFooterWrapper.tsx'
-import { renderInputsBaseOnConfigs, testCPFFormat, checkCPFIsAlreadyRegistered } from '../../utils/forms.tsx'
+import { renderInputsBaseOnConfigs, testCPFFormat, checkCPFIsAlreadyRegistered, yupBuilders } from '../../utils/forms.tsx'
+import { isGreaterThan18 } from '../../utils/date.ts'
 
 const { REQUIRED, INVALID_EMAIL, MAX_LENGTH } = FORM_MESSAGES
-
-const yupRequiredByBirthdateBuilder = {
-  is: (value: string) => {
-    return isGreaterThan18(value)
-  },
-  then: (schema: Yup.StringSchema<any>) => schema,
-  otherwise: (schema: Yup.StringSchema<any>) => schema.required(REQUIRED).test(testCPFFormat)
-}
+const { requiredBasedOnBirthdate, cpfRequiredBasedOnBirthdate } = yupBuilders
 
 const schema = Yup.object({
   name: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
@@ -29,10 +22,10 @@ const schema = Yup.object({
   height: Yup.string().required(REQUIRED),
   email: Yup.string().required(REQUIRED).email(INVALID_EMAIL),
   phone: Yup.string().required(REQUIRED),
-  responsibleName: Yup.string().max(50, MAX_LENGTH(50)).when('birthDate', yupRequiredByBirthdateBuilder),
-  responsibleLastName: Yup.string().max(50, MAX_LENGTH(50)).when('birthDate', yupRequiredByBirthdateBuilder),
-  responsibleBirthDate: Yup.string().when('birthDate', yupRequiredByBirthdateBuilder),
-  responsibleCpf: Yup.string().when('birthDate', yupRequiredByBirthdateBuilder)
+  responsibleName: Yup.string().max(50, MAX_LENGTH(50)).when('birthDate', requiredBasedOnBirthdate),
+  responsibleLastName: Yup.string().max(50, MAX_LENGTH(50)).when('birthDate', requiredBasedOnBirthdate),
+  responsibleBirthDate: Yup.string().when('birthDate', requiredBasedOnBirthdate),
+  responsibleCpf: Yup.string().when('birthDate', cpfRequiredBasedOnBirthdate)
 })
 
 export type AboutYouValues = Yup.InferType<typeof schema>
@@ -191,13 +184,5 @@ export const AboutYouForm = (props: SimpleGridProps) => {
       </FormFooterWrapper>
     </Center>
   </FormikProvider>
-}
-
-/**
- * Check if the birthDate is greater than 18 years.
- * @param birthDate
- */
-function isGreaterThan18(birthDate: string) {
-  return DateTime.now().diff(DateTime.fromISO(birthDate), 'years').years > 18
 }
 

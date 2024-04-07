@@ -6,8 +6,27 @@ import { FORM_MESSAGES } from './constants.ts'
 import { subscribeService } from '../services/subscribeService/subscribeService.ts'
 import { TestContext, ValidationError } from 'yup'
 import { AxiosError } from 'axios'
+import * as Yup from 'yup'
+import { isGreaterThan18 } from './date.ts'
 
-const {  INVALID_CPF, CPF_ALREADY_REGISTERED } = FORM_MESSAGES
+const {  INVALID_CPF, CPF_ALREADY_REGISTERED, REQUIRED } = FORM_MESSAGES
+
+export const yupBuilders = {
+  requiredBasedOnBirthdate: {
+    is: (value: string) => {
+      return isGreaterThan18(value)
+    },
+    then: (schema: Yup.StringSchema<any>) => schema,
+    otherwise: (schema: Yup.StringSchema<any>) => schema.required(REQUIRED)
+  },
+  cpfRequiredBasedOnBirthdate: {
+    is: (value: string) => {
+      return isGreaterThan18(value)
+    },
+    then: (schema: Yup.StringSchema<any>) => schema,
+    otherwise: (schema: Yup.StringSchema<any>) => schema.required(REQUIRED).test(testCPFFormat)
+  }
+}
 
 /**
  * Tests if a CPF is valid in a YUP validation.
