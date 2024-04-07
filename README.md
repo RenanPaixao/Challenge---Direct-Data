@@ -6,6 +6,7 @@
 
 O projeto consiste em uma aplicação web simulando um formulário de cadastro de usuários em aulas de boxe, adicionando 
 numa api passada previamente e consumindo os dados para exibição em uma tabela. 
+
 ---
 
 ## Como foi pensado?
@@ -49,6 +50,8 @@ Na tabela, temos a possibilidade de buscar os valores de cada coluna, ordenar de
 ao clicar no header, e editar os dados de cada célula clicando diretamente em cada.
 
 Demo:
+
+https://github.com/RenanPaixao/Challenge---Direct-Data/assets/57810270/319d7991-4ceb-44e7-a416-bfc0bb8cb383
 
 ### Ajustes gerais
 
