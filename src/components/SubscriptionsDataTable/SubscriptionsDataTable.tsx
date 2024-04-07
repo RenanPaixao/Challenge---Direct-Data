@@ -93,7 +93,7 @@ const columns: ColDef<SubscribeInformation>[] = [
   {
     field: 'responsible.cpf',
     headerName: 'CPF do Responsável',
-    valueGetter: params => params.data?.cpf ? cpfFormatter(params.data?.cpf as string) : '-'
+    valueGetter: params => params.data?.responsible?.cpf ? cpfFormatter(params.data?.responsible?.cpf as string) : '-'
   },
   {
     field: 'responsible.birthDate',
