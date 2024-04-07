@@ -25,21 +25,15 @@ export function testCPFFormat(value: string, ctx: TestContext<any>): boolean | V
 /**
  * Tests if a CPF is valid in a YUP validation.
  * @param value
- * @param ctx
  */
-export async function testCPFIsAlreadyRegistered(value: string, ctx: TestContext<any>): Promise<boolean | ValidationError> {
+export async function checkCPFIsAlreadyRegistered(value: string): Promise<true | {message: string}> {
   const cpf = value.replace(/\D/g, '')
-  const isValid = isCPF(cpf)
-
-  if(!isValid) {
-    return true
-  }
 
   try {
     const data = await subscribeService.getByCpf(cpf)
 
     if(data) {
-      return ctx.createError({ message: CPF_ALREADY_REGISTERED })
+      return { message: CPF_ALREADY_REGISTERED }
     }
   }catch(e) {
     if(e instanceof AxiosError && e.code === 'ERR_BAD_REQUEST') {
@@ -50,22 +44,6 @@ export async function testCPFIsAlreadyRegistered(value: string, ctx: TestContext
   }
 
   return true
-}
-
-/**
- * Test the format of a CPF and if it is already registered.
- * @param value
- * @param ctx
- */
-export async function testCPF(value: string, ctx: any) {
-  const isValid = testCPFFormat(value, ctx)
-
-  if(isValid instanceof Error) {
-    return isValid
-  }
-
-  const cpf = value.replace(/\D/g, '')
-  await testCPFIsAlreadyRegistered(cpf, ctx)
 }
 
 /**

@@ -8,7 +8,7 @@ import { FieldConfig } from './types'
 import { DateTime } from 'luxon'
 import { StepperContext } from '../../context/StepperContext.tsx'
 import { FormFooterWrapper } from '../FormFooterWrapper/FormFooterWrapper.tsx'
-import { renderInputsBaseOnConfigs, testCPFFormat, testCPFIsAlreadyRegistered } from '../../utils/forms.tsx'
+import { renderInputsBaseOnConfigs, testCPFFormat, checkCPFIsAlreadyRegistered } from '../../utils/forms.tsx'
 
 const { REQUIRED, INVALID_EMAIL, MAX_LENGTH } = FORM_MESSAGES
 
@@ -16,7 +16,7 @@ const schema = Yup.object({
   name: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
   lastName: Yup.string().required(REQUIRED).max(50, MAX_LENGTH(50)),
   birthDate: Yup.string().required(REQUIRED),
-  cpf: Yup.string().required(REQUIRED).test(testCPFFormat).test(testCPFIsAlreadyRegistered),
+  cpf: Yup.string().required(REQUIRED).test(testCPFFormat),
   weight: Yup.string().required(REQUIRED),
   height: Yup.string().required(REQUIRED),
   email: Yup.string().required(REQUIRED).email(INVALID_EMAIL),
@@ -130,8 +130,14 @@ export const AboutYouForm = (props: SimpleGridProps) => {
       responsibleCpf: responsible?.cpf ?? '',
       ...aboutYou
     },
-    onSubmit: values => {
+    onSubmit: async values => {
       const { responsibleName, responsibleLastName, responsibleBirthDate, responsibleCpf, ...rest } = values
+
+      const isValid = await checkCPFIsAlreadyRegistered(formik.values.cpf)
+      if(isValid !== true) {
+        formik.setFieldError('cpf', isValid.message)
+        return
+      }
 
       const responsible = areOver18 ? null : {
         name: responsibleName,
