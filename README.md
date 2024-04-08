@@ -46,7 +46,7 @@ O cep tem uma integração com a api do ViaCEP, que preenche os campos de endere
 
 ### Visualização dos dados
 
-A tabela está na rota `/all-students` e é carregada ao entrar na página.
+A tabela está na rota `/all-students` ([link](https://direct-data-gym.vercel.app/all-students)) e é carregada ao entrar na página.
 
 Na tabela, temos a possibilidade de buscar os valores de cada coluna, ordenar de forma crescente ou decrescente 
 ao clicar no header, e editar os dados de cada célula clicando diretamente em cada.
