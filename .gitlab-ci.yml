@@ -1,0 +1,27 @@
+stages:
+  - build
+  - test
+
+
+build:
+  stage: build
+  script:
+    - echo "VITE_API_URL=$API_URL" >> build.env
+    - echo "VITE_API_TOKEN=$API_TOKEN" >> build.env
+  artifacts:
+    reports:
+      dotenv: build.env
+
+e2e-tests:
+  image: cypress/browsers:node18.12.0-chrome107
+  stage: test
+  script:
+    - npm install yarn -g
+    - yarn install
+    - yarn dev &
+    - npx cypress run --browser chrome
+  artifacts:
+    when: on_failure
+    paths:
+      - cypress/screenshots/**/*.png
+    expire_in: 1 day
