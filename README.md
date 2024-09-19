@@ -75,7 +75,7 @@ para os componentes mais importantes da aplicação, como o formulário e a tabe
 
 End to end:
 - Já para os testes end to end, usei o cypress e também a testing library, para testar os principais fluxos da 
-aplicação, como o cadastro com um responsável e o cadastro sem um responsável.
+aplicação, como o cadastro com um responsável e o cadastro sem responsável.
 
 ---
 
