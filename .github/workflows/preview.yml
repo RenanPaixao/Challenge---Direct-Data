@@ -1,0 +1,25 @@
+name: 🔂 Surge PR Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v2
+      - name: Instalar dependências
+        run: yarn install
+      - name: Build da aplicação
+        run: yarn build
+      - uses: afc163/surge-preview@v1
+        id: preview_step
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN }}
+          dist: dist
+          teardown: 'true'
+      - name: Obter URL do preview
+        run: echo "Preview URL => ${{ steps.preview_step.outputs.preview_url }}"

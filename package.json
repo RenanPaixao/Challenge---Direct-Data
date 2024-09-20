@@ -50,6 +50,7 @@
     "react-icons": "^5.0.1",
     "react-imask": "^7.5.0",
     "simple-chakra-ui-datepicker": "^1.0.0",
+    "surge": "^0.24.6",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vitest": "^1.2.1"
